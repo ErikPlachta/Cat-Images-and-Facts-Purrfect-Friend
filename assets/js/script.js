@@ -8,19 +8,26 @@
 
 
 // For local storage DB
-let database_Name = "purrfect-friend";
+var database_Name = "purrfect-friend";
 
 
 // Total Hours in Day
-let hours_Day = 24;
+var hours_Day = 24;
 
 // Moment JS date
 const today = function() {return moment().format("dddd, MMMM Do YYYY")};
 
 // hour in 24 hour format - hour | minute | second | miliseconds | am-pm
-const time_24 = function() { return moment().format("HH:MM:SS:MS a")};
+const time_24 = function() { return moment().format("HH:mm:ss:ms a")};
+
 // hour in 12 hour format - hour | minute | second | miliseconds | am-pm
-const time_12 = function() { return moment().format("hh:MM:SS:MS a")};
+const time_12 = function() { return moment().format("hh:mm:ss:ms a")};
+
+//date & time for database logging down to the milisecond
+const datetime_12 = function() { return moment().format("YYYYMMDD hh:mm:ss:ms a")};
+
+//-- event specific globals
+var user_FirstLogin = false;
 
 /*----------------------------------------------------------------------------*/
 /*-- X --> START
@@ -76,6 +83,10 @@ function get_Database(){
         if (database_Current.settings == null) {
             database_Current['settings'] = {};
         };
+
+        if (database_Current.api == null) {
+            database_Current['api'] = {};
+        };
     };
     
     // Return JSON dict
@@ -87,21 +98,21 @@ function set_Database(entry) {
     /* Use to set database values in Local Storage. Verify, merge, append, and
         updates. 
     */
-   
     
     //--------------------------------
     //-- LOCAL VAR --> START
 
     // Used to merge existing and new database changes, then written to Local Storage
-    let database_New = {userdata: {},settings:{}, api:{} };
+    let database_New = {userdata:{}, settings:{}, api:{} };
     
     // Used to hold current database values if they exist
     let userdata_Current = {};
     let settings_Current = {};
+    let api_Current = {};
     
     //-- LOCAL VAR --> END
     //--------------------------------
-    // DATABASE VERIFICATION --> START
+    // DATABASE INTEGRITY --> START
     
     // Getting local storage database to add to new OBJ to re-write to storage once verified
     let database_Current = get_Database(); 
@@ -112,19 +123,35 @@ function set_Database(entry) {
         
         // If user already defined in local storage, grab it.
         if (database_Current.userdata != null) {
+            
+            // Merge current database.userdata to new placeholder
             userdata_Current = database_Current.userdata;
+            
+            // update last login time
+            userdata_Current.login_Last = datetime_12();
         }
         
         // If settings already defined in local storage, grab it.
         if (database_Current.settings != null) {
             settings_Current = database_Current.settings;
         }
+
+         // If API already defined in local storage, grab it.
+         if (database_Current.api != null) {
+            api_Current = database_Current.api;
+        }
     }
     
+    // Database not yet built so set some default values
+    else {
+            
+        // First login for the user, so update value.
+        userdata_Current['login_First'] = datetime_12();   
+    }
 
-    // DATABASE VERIFICATION -> END // 
+    // DATABASE INTEGRITY -> END // 
     //--------------------------------//
-    //-- VALIDATE ENTRY -> START //
+    //-- ENTRY INTEGRITY -> START //
 
     //-- If user data to update database or if _Load_Database() ran.
     if(entry != undefined){
@@ -136,67 +163,65 @@ function set_Database(entry) {
 
             // Build userdata results
             for (key in entry.userdata){
-                // console.log("entry.userdata_Current[key]: ", key) //TODO:: 12/07/2021 #EP || Remove console.log when done testing
                 
-                // If the key is already in the database
-                if(userdata_Current[key] != undefined){
-                    // set Last Login time to now
-                    userdata_Current[key].login_Last = time_12();
-                }
-                
-                // IF date isn't in database, add it.
-                else {
-                    console.log("Key",key, "not yet enetered by EU. Added to database.")
-                    //No there yet so adding it
-                    userdata_Current[key] = entry.userdata_Current[key];
+                // IF userdata key not yet defined in database, add it.
+                if(userdata_Current[key] == undefined){                
+                    userdata_Current[key] = entry.userdata[key];
                 }
             };
             
-            //Itterate through dates in entries, update database accordingly.
-            for(date in entry.userdata_Current){
+            /* FOR EACH DATE IN TIMELINE
+
+                Itterate through userdata.timeline dates, update the database.
+                Used when page runs, so if new date on load new timeline entry
+            */
+            for(date in entry.userdata.timeline){
+                //add entry value to what will be written to local storage
+                userdata_Current.timeline[date] = entry.userdata.timeline[date];
                 
-                for (time in entry.userdata_Current[date]){
-                    console.log(entry.userdata_Current[date][time]);
-                    userdata_Current[date][time] = entry.userdata_Current[date][time];
+                // if first login for the day
+                if(userdata_Current.timeline[date].login_First == null){
+                    // Set current date and time
+                    userdata_Current.timeline[date].login_First = datetime_12();
                 }
             }
-            
-            // Merge userdata_Current logs together from curent and entry
-            // userdata_Current = Object.assign({},userdata_Current, entry.userdata_Current);
-            // console.log("userdata_Current: ",userdata_Current)
         };
 
-        //-- If setting edit is saved --//
-        if ("settings_Current" in entry){
+        //-- If settings are to be updated
+        if (entry.settings != null){
             console.log("settings_Current key exist in entry: ", settings_Current);
             
             // Merge settings_Current together from curent and entry
-            settings_Current = Object.assign({},settings_Current, entry.settings_Current);            
+            settings_Current = Object.assign({},settings_Current, entry.settings);            
+        } 
+
+        //-- If settings are to be updated
+        if (entry.api == "TSETING"){
+        // if (entry.api != null){
+            console.log("api_Currenet key exist in entry: ", api_Current);
+            
+            // Merge settings_Current together from curent and entry
+            api_Current = Object.assign({},api_Current, entry.api);
         } 
     };    
-    //-- VALIDATE ENTRY -> END //
+    //-- ENTRY INTEGRITY -> END //
     //--------------------------------//
-    // userdata_Current BUILD -> START //
-    /* itterate and rebuild userdata_Current */ 
+    /* userdata_Current BUILD -> START 
+        
+        itterates current database and adds to userdata_Current
+    */ 
 
-    // get ALL keys within userdata_Current
-    let keys = Object.keys(userdata_Current);
-    // add them to new OBJ used to update Local Storage
-    keys.forEach((key) => {
-        // Add key to dictionary
-        database_New.userdata_Current[key] = (userdata_Current[key]);
+    
+    // Grab current userdata Keys, and add any existing keys to database_New
+    Object.keys(userdata_Current).forEach((key) => {    
+        // Add keys to dictionary
+        database_New.userdata[key] = (userdata_Current[key]);
     });
-    // userdata_Current BUILD - END //
-    //--------------------------------//
-    /* settings_Current BUILD -> START */
-    /* itterate and rebuild userdata_Current */ 
-
-    // get ALL keys within settings_Current
-    keys = Object.keys(settings_Current);
-    // add them to new OBJ used to update Local Storage
-    keys.forEach((key) => {
+    
+    // Grab curent setting keys, and add any existing keys to database_New
+    Object.keys(settings_Current).forEach((key) => {
         // Add key to dictionary
-        database_New.settings_Current[key] = settings_Current[key];
+        database_New.settings[key] = settings_Current[key];
     });
     /* settings_Current BUILD -> END */
 
@@ -206,6 +231,9 @@ function set_Database(entry) {
 
     // Updating Database
     localStorage.setItem(database_Name, JSON.stringify(database_New));
+
+    console.log("login_First: ",database_New.userdata.login_First)
+    console.log("login_Last: ",database_New.userdata.login_Last)
     return null;
 };
 //-- END of set_Database(entry)
@@ -216,6 +244,7 @@ function set_Database(entry) {
 function _load_Database() {
     //-- Default database to ensure required content always exists
     
+
     let database_Default = {
         
         //-- USER SESSION DATA
@@ -227,9 +256,9 @@ function _load_Database() {
                 //build todays date into database
                 [(moment().format("YYYYMMDD"))]: {
                     //-- first login of the day
-                    login_First: time_12(),
+                    login_First: null,
                     //-- last login of the day
-                    login_Last: time_12(),
+                    login_Last: datetime_12(),
                      //-- record of search parameters
                     search_Requests: {},
                     //-- record of what was clicked on
@@ -238,10 +267,11 @@ function _load_Database() {
             },
             //-- users saved list. Stores full payload
             saved: {},
+
             //-- first login ever
-            login_First: time_12(),
-            //-- last login ever
-            login_Last: time_12(),
+            login_First: null, //TODO:: 12/08/2021 #EP || Make only update once
+            //-- last login ever.
+            login_Last: datetime_12(),
         },
         
         //-- APP SETTINGS
@@ -251,7 +281,9 @@ function _load_Database() {
            },
            // If user defines these settings_Current, will over-ride defaults
            user: {
-             timeZone: null,  
+             timeZone: null,
+             zipCode: null,
+             city: null
            },
         },
         
@@ -260,34 +292,19 @@ function _load_Database() {
             petfinder: {}
         }
     };
+    //-- end of database_Default
 
     console.log("function _load_Database() database_Default: ",database_Default) //TODO:: 12/08/2021 #EP || Delete console.log once done testing
     
     // Set Default Database 
-    set_Database(_load_Database);
+    set_Database(database_Default);
     
     return null;
 };
 
 //-- DATABASE MANAGEMENT --> END
 /* -------------------------------------------------------------------------- */
-//-- RUNNING --> START
-
-/* 1. Load the database */
-// _load_Database();
-
-/* 2. Update Page Setings */
-
-/* 3. Load APIs */
-
-/* 4. Build Page */
-
-
-
-//-- RUNNING --> END
-/*----------------------------------------------------------------------------*/
 //-- TESTING --> START
-
 
 function _set_DemoData(){
     //-- Overwrites current database with demo data to simplify testing.
@@ -304,9 +321,9 @@ function _set_DemoData(){
                 //build todays date into database
                 [(moment().format("YYYYMMDD"))]: {
                     //-- first login of the day
-                    login_First: time_12(),
+                    login_First: null,
                     //-- last login of the day
-                    login_Last: time_12(),
+                    login_Last: (moment().format("YYYYMMDD hh:mm:ss:ms a")),
                      //-- record of search parameters
                     search_Requests: {},
                     //-- record of what was clicked on
@@ -315,21 +332,24 @@ function _set_DemoData(){
             },
             //-- users saved list. Stores full payload
             saved: {},
+            
             //-- first login ever
-            login_First: time_12(),
-            //-- last login ever
-            login_Last: time_12(),
+            login_First: '20211208 17:12:64:126 pm', //TODO:: 12/08/2021 #EP || Make only update once
+            //-- last login ever.
+            login_Last:  (moment().format("YYYYMMDD hh:mm:ss:ms a")),
         },
         
         //-- APP SETTINGS
         settings: {
-        defaults: {
-            timeZone: null, // TODO:: 12/08/2021 #EP || Set a Default Time Zone based on browser
-        },
-        // If user defines these settings_Current, will over-ride defaults
-        user: {
-            timeZone: null,  
-        },
+            defaults: {
+                timeZone: null, // TODO:: 12/08/2021 #EP || Set a Default Time Zone based on browser
+            },
+            // If user defines these settings_Current, will over-ride defaults
+            user: {
+                timeZone: null,
+                zipCode: null,
+                city: null
+            },
         },
         
         //-- API SETTINGS
@@ -340,7 +360,7 @@ function _set_DemoData(){
         }
     };
 
-    console.log("function _load_Database() database_Default: ",demo_Database) //TODO:: 12/08/2021 #EP || Delete console.log once done testing
+    console.log("function _set_DemoData() demo_Database: ",demo_Database) //TODO:: 12/08/2021 #EP || Delete console.log once done testing
 
     //Auto builds database overwriting current
     localStorage.setItem("purrfect-friend",JSON.stringify(demo_Database));
@@ -348,7 +368,27 @@ function _set_DemoData(){
     return null;
 };
 
-_set_DemoData();
-
 //-- TESTING --> END
+/*----------------------------------------------------------------------------*/
+//-- RUNNING --> START
+
+let testing = false;
+
+if (testing == false){
+    /* 1. Load the database */
+    _load_Database();
+
+    /* 2. Update Page Setings */
+
+    /* 3. Load APIs */
+
+    /* 4. Build Page */
+}
+else {
+    console.log("//-- RUNNING TEST")
+    _set_DemoData();
+}
+
+
+//-- RUNNING --> END
 /*----------------------------------------------------------------------------*/
