@@ -192,27 +192,28 @@ function verify_build_Database() {
     // console.log(moment().format("YYYY/MM/DD"));
     
     let a_userdata_CurrentScheduler = {
-        userdata_Current: {
-            //build todays date into database
-            [(moment().format("YYYYMMDD"))]: {
-                login_First: time_24(),
-                login_Last: time_24(),
-            }
+        userdata: {
+            
+            //-- running log of dates user logged in
+            timeline: {
+                
+                //build todays date into database
+                [(moment().format("YYYYMMDD"))]: {
+                    login_First: time_24(),
+                    login_Last: time_24(),
+                }
+            },
+            //-- users saved list. Stores full payload
+            saved: {}
         },
-        settings_Current: {
+        settings: {
            defaults: {
-               timeFormat: 12, // 12 or 24
-
-               // Business Hours - in military time for settings_Current
-               dayStart: 8, 
-               dayEnd: 18
+               timeZone: null,
            },
 
            // If user defines these settings_Current, will over-ride defaults
            user: {
-               timeFormat: null,
-               dayStart: null,
-               dayEnd: null,
+               
            },
             times : {
             }
