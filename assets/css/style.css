@@ -55,10 +55,23 @@ body {
     background-color: var(--bg_Body);
 }
 
-  button {
-   /* Default button styling */
-    box-shadow: var(--boxShadow_inset_Top_Right);
-  }
+button {
+  /* Default button styling */
+  box-shadow: var(--boxShadow_inset_Top_Right);
+}
+
+h1,h2,h3,h4,h5 {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-weight: 400;
+}
+
+h2 {
+  font-weight: 400;
+}
 
 
 /* ALL ELEMENTS --> END */
