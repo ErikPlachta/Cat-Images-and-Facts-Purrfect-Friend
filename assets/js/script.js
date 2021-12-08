@@ -22,44 +22,78 @@ const time_24 = function() { return moment().format("HH:MM:SS:MS a")};
 // hour in 12 hour format - hour | minute | second | miliseconds | am-pm
 const time_12 = function() { return moment().format("hh:MM:SS:MS a")};
 
-
 /*----------------------------------------------------------------------------*/
-//-- DATABASE MANAGEMENT --> START
+/*-- X --> START
+
+
+    TODO:: 12/08 #EP || Define next thing to do
+
+*/
+
+
+//-- X --> END
+/*----------------------------------------------------------------------------*/
+/*-- DATABASE MANAGEMENT --> START
+    - Manages all database related functionality with three functions. 
+    - Runs all three on start.
+
+
+        get_Database()
+            - Use to to get the current database in JSON format.
+            - Public function used anytime needes.
+            - returns JSON dict of database
+
+
+        set_Database(entry)
+            - Use set database values in Local Storage. Verify, merge, append,
+                and updates.
+            - Public function used anytime needed
+            - returns null
+
+        _load_Database()
+            - Default database to ensure required content always exists
+            - Private function ran by program
+            - returns null
+*/
 
 
 function get_Database(){
-    // Used to know what to build and extract questions from database to build
+    // Use to to get the current database in JSON format. Always returns dict.
 
-    // Get Database
+    
+    // Get Database from local storage, build into JSON dict
     let database_Current = JSON.parse(localStorage.getItem(database_Name));
-    console.log("database_Current: ",database_Current);
+    console.log("function get_Database(): database_Current: ",database_Current);
     // If database exists
     if (database_Current != null) {
         
-        // if userdata_Current key doesn't exist, create it
-        if (("userdata_Current" in database_Current) == false) {
-            database_Current['userdata_Current'] = {};
+        // if userdata key doesn't exist, create it
+        if (database_Current.userdata == null) {
+            database_Current['userdata'] = {};
         };
         
-        
-        // if settings_Current key doesn't exist, create it
-        if (database_Current.settings_Current == null) {
-            database_Current['settings_Current'] = {};
+        // if settings key doesn't exist, create it
+        if (database_Current.settings == null) {
+            database_Current['settings'] = {};
         };
     };
+    
+    // Return JSON dict
     return database_Current;
 };
 
 
 function set_Database(entry) {
-    /* Use to set database values in Local Storage. Verify, merge, append, and updates. */
+    /* Use to set database values in Local Storage. Verify, merge, append, and
+        updates. 
+    */
    
     
     //--------------------------------
     //-- LOCAL VAR --> START
 
     // Used to merge existing and new database changes, then written to Local Storage
-    let database_New = {userdata_Current: {},settings_Current:{} };
+    let database_New = {userdata: {},settings:{}, api:{} };
     
     // Used to hold current database values if they exist
     let userdata_Current = {};
@@ -73,6 +107,7 @@ function set_Database(entry) {
     let database_Current = get_Database(); 
 
     // If a Database in Local Storage already exists, verify & collect keys + content
+        //-- NOTE: If not true, it's a new database.
     if (database_Current != null) {
         
         // If user already defined in local storage, grab it.
@@ -85,27 +120,23 @@ function set_Database(entry) {
             settings_Current = database_Current.settings;
         }
     }
-
-    // If Database doesn't exist ( shouldn't happen ) 
-    else { 
-        console.log("// ./assets/js/script.js function set_Database(entry) - ELSE. ( see admin )");
-    };
+    
 
     // DATABASE VERIFICATION -> END // 
     //--------------------------------//
     //-- VALIDATE ENTRY -> START //
 
-    //-- If user provided entry to udpate database or if page refreshed so quality check ran
+    //-- If user data to update database or if _Load_Database() ran.
     if(entry != undefined){
         
         //-- If trying to udpate userdata
         if("userdata" in entry){
             
-            console.log("userdata key exists in entry: ", userdata); //TODO:: 12/07/2021 #EP || Remove console.log when done testing
+            // console.log("userdata key exists in entry: ", userdata); //TODO:: 12/07/2021 #EP || Remove console.log when done testing
 
             // Build userdata results
             for (key in entry.userdata){
-                console.log("entry.userdata_Current[key]: ", key) //TODO:: 12/07/2021 #EP || Remove console.log when done testing
+                // console.log("entry.userdata_Current[key]: ", key) //TODO:: 12/07/2021 #EP || Remove console.log when done testing
                 
                 // If the key is already in the database
                 if(userdata_Current[key] != undefined){
@@ -132,7 +163,7 @@ function set_Database(entry) {
             
             // Merge userdata_Current logs together from curent and entry
             // userdata_Current = Object.assign({},userdata_Current, entry.userdata_Current);
-            console.log("userdata_Current: ",userdata_Current)
+            // console.log("userdata_Current: ",userdata_Current)
         };
 
         //-- If setting edit is saved --//
@@ -169,29 +200,23 @@ function set_Database(entry) {
     });
     /* settings_Current BUILD -> END */
 
-    //--------------------------------//
-    //   END OF BUILDING DICTIONARY   //
-    //--------------------------------//
+    //--  END OF BUILDING DICTIONARY  
+    
+     console.log("function set_Database(entry): database_New ", database_New);
 
     // Updating Database
     localStorage.setItem(database_Name, JSON.stringify(database_New));
+    return null;
 };
+//-- END of set_Database(entry)
 
 
-//-- DATABASE MANAGEMENT --> END
-/* -------------------------------------------------------------------------- */
-//-- BUILD & VERIFY DATABASE --> START
 
 
-// MAKE SURE DATABASE EXISTS
-function verify_build_Database() {
+function _load_Database() {
+    //-- Default database to ensure required content always exists
     
-    // fully fleshed out all hours for just 1 day. 
-        // TODO:: 12/01/2021 #EP || This best way to do it?
-    
-    // console.log(moment().format("YYYY/MM/DD"));
-    
-    let a_userdata_CurrentScheduler = {
+    let database_Default = {
         userdata: {
             
             //-- running log of dates user logged in
@@ -208,31 +233,39 @@ function verify_build_Database() {
         },
         settings: {
            defaults: {
-               timeZone: null,
+               timeZone: null, // TODO:: 12/08/2021 #EP || Set a Default Time Zone based on browser
            },
-
            // If user defines these settings_Current, will over-ride defaults
            user: {
-               
+             timeZone: null,  
            },
-            times : {
-            }
         }
     };
 
-    console.log("auserdata_CurrentScheduler: ",a_userdata_CurrentScheduler)
-    //TODO:: 12/01/2021 #EP || Add build database stuff here
+    console.log("function _load_Database() database_Default: ",database_Default) //TODO:: 12/08/2021 #EP || Delete console.log once done testing
 
     // localStorage.setItem("a_userdata_CurrentScheduler",JSON.stringify(a_userdata_CurrentScheduler));
-    // Set Default Database 
-    set_Database(a_userdata_CurrentScheduler);
     
+    // Set Default Database 
+    set_Database(_load_Database);
+    
+    return null;
 };
 
-/* BUILD & VERIFY DATABASE --> END
+//-- DATABASE MANAGEMENT --> END
 /* -------------------------------------------------------------------------- */
-//-- TESTING --> START
+//-- RUNNING --> START
+
+/* 1. Load the database */
+_load_Database();
+
+/* 2. Update Page Setings */
+
+/* 3. Load APIs */
+
+/* 4. Build Page */
 
 
-//-- TESTING --> END
+
+//-- RUNNING --> END
 /*----------------------------------------------------------------------------*/
