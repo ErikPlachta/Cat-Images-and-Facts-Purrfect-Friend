@@ -217,6 +217,8 @@ function _load_Database() {
     //-- Default database to ensure required content always exists
     
     let database_Default = {
+        
+        //-- USER SESSION DATA
         userdata: {
             
             //-- running log of dates user logged in
@@ -224,13 +226,25 @@ function _load_Database() {
                 
                 //build todays date into database
                 [(moment().format("YYYYMMDD"))]: {
-                    login_First: time_24(),
-                    login_Last: time_24(),
-                }
+                    //-- first login of the day
+                    login_First: time_12(),
+                    //-- last login of the day
+                    login_Last: time_12(),
+                     //-- record of search parameters
+                    search_Requests: {},
+                    //-- record of what was clicked on
+                    view_History: {}
+                },
             },
             //-- users saved list. Stores full payload
-            saved: {}
+            saved: {},
+            //-- first login ever
+            login_First: time_12(),
+            //-- last login ever
+            login_Last: time_12(),
         },
+        
+        //-- APP SETTINGS
         settings: {
            defaults: {
                timeZone: null, // TODO:: 12/08/2021 #EP || Set a Default Time Zone based on browser
@@ -239,12 +253,15 @@ function _load_Database() {
            user: {
              timeZone: null,  
            },
+        },
+        
+        //-- API SETTINGS
+        api: {
+            petfinder: {}
         }
     };
 
     console.log("function _load_Database() database_Default: ",database_Default) //TODO:: 12/08/2021 #EP || Delete console.log once done testing
-
-    // localStorage.setItem("a_userdata_CurrentScheduler",JSON.stringify(a_userdata_CurrentScheduler));
     
     // Set Default Database 
     set_Database(_load_Database);
@@ -257,7 +274,7 @@ function _load_Database() {
 //-- RUNNING --> START
 
 /* 1. Load the database */
-_load_Database();
+// _load_Database();
 
 /* 2. Update Page Setings */
 
@@ -268,4 +285,70 @@ _load_Database();
 
 
 //-- RUNNING --> END
+/*----------------------------------------------------------------------------*/
+//-- TESTING --> START
+
+
+function _set_DemoData(){
+    //-- Overwrites current database with demo data to simplify testing.
+    
+    let demo_Database = {
+            
+        //-- USER SESSION DATA
+        //-- USER SESSION DATA
+        userdata: {
+            
+            //-- running log of dates user logged in
+            timeline: {
+                
+                //build todays date into database
+                [(moment().format("YYYYMMDD"))]: {
+                    //-- first login of the day
+                    login_First: time_12(),
+                    //-- last login of the day
+                    login_Last: time_12(),
+                     //-- record of search parameters
+                    search_Requests: {},
+                    //-- record of what was clicked on
+                    view_History: {}
+                },
+            },
+            //-- users saved list. Stores full payload
+            saved: {},
+            //-- first login ever
+            login_First: time_12(),
+            //-- last login ever
+            login_Last: time_12(),
+        },
+        
+        //-- APP SETTINGS
+        settings: {
+        defaults: {
+            timeZone: null, // TODO:: 12/08/2021 #EP || Set a Default Time Zone based on browser
+        },
+        // If user defines these settings_Current, will over-ride defaults
+        user: {
+            timeZone: null,  
+        },
+        },
+        
+        //-- API SETTINGS
+        api: {
+            petfinder: {
+
+            }
+        }
+    };
+
+    console.log("function _load_Database() database_Default: ",demo_Database) //TODO:: 12/08/2021 #EP || Delete console.log once done testing
+
+    //Auto builds database overwriting current
+    localStorage.setItem("purrfect-friend",JSON.stringify(demo_Database));
+
+    return null;
+};
+
+_set_DemoData();
+
+//-- TESTING --> END
 /*----------------------------------------------------------------------------*/
