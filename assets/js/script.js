@@ -153,14 +153,14 @@ function set_Database(entry) {
     //--------------------------------//
     //-- ENTRY INTEGRITY -> START //
 
-    //-- If user data to update database or if _Load_Database() ran.
+    //-- TODO:: 12/08/2021 #EP || If the entry fits required params or not. ( a later thing )
+
+    //-- If user action to update database or if _Load_Database() ran.
     if(entry != undefined){
         
-        //-- If trying to udpate userdata
-        if("userdata" in entry){
+        //-- If entry provides userdata values
+        if(entry.userdata != null){
             
-            // console.log("userdata key exists in entry: ", userdata); //TODO:: 12/07/2021 #EP || Remove console.log when done testing
-
             // Build userdata results
             for (key in entry.userdata){
                 
@@ -187,58 +187,56 @@ function set_Database(entry) {
             }
         };
 
-        //-- If settings are to be updated
+        //-- If entry provides setting values
         if (entry.settings != null){
-            console.log("settings_Current key exist in entry: ", settings_Current);
-            
             // Merge settings_Current together from curent and entry
             settings_Current = Object.assign({},settings_Current, entry.settings);            
         } 
 
-        //-- If settings are to be updated
-        if (entry.api == "TSETING"){
-        // if (entry.api != null){
-            console.log("api_Currenet key exist in entry: ", api_Current);
+        //--If entry provides api values
+        if (entry.api != null){        
+            // TODO:: 12/08/2021 #EP || Confirm if this is working once api data in
             
             // Merge settings_Current together from curent and entry
             api_Current = Object.assign({},api_Current, entry.api);
         } 
-    };    
-    //-- ENTRY INTEGRITY -> END //
-    //--------------------------------//
-    /* userdata_Current BUILD -> START 
-        
-        itterates current database and adds to userdata_Current
-    */ 
+    }; 
 
+    //-- END --> ENTRY INTEGRITY
+    //--------------------------------//
+    /* START -> MERGING DATA
+        
+        itterates current database and adds 
+    */ 
     
-    // Grab current userdata Keys, and add any existing keys to database_New
+    // Grab current userdata Keys and merge
     Object.keys(userdata_Current).forEach((key) => {    
         // Add keys to dictionary
         database_New.userdata[key] = (userdata_Current[key]);
     });
     
-    // Grab curent setting keys, and add any existing keys to database_New
+    // Grab curent setting keys and merge
     Object.keys(settings_Current).forEach((key) => {
         // Add key to dictionary
         database_New.settings[key] = settings_Current[key];
     });
-    /* settings_Current BUILD -> END */
+    // Grab curent API values and merge
+    Object.keys(api_Current).forEach((key) => {
+        // Add key to dictionary
+        database_New.api[key] = api_Current[key];
+    });
+    
 
-    //--  END OF BUILDING DICTIONARY  
+    //-- END -> BUILDING DICTIONARY  
     
      console.log("function set_Database(entry): database_New ", database_New);
 
     // Updating Database
     localStorage.setItem(database_Name, JSON.stringify(database_New));
 
-    console.log("login_First: ",database_New.userdata.login_First)
-    console.log("login_Last: ",database_New.userdata.login_Last)
     return null;
 };
-//-- END of set_Database(entry)
-
-
+//-- END -> set_Database(entry)
 
 
 function _load_Database() {
