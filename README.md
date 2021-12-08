@@ -20,16 +20,16 @@ iv. Resources
 ### [Connie Barrantes]()
 
 - Link to About Me Page
-- Priamry contributions were
+- Primary contributions were
 
 ### [Elias Tirado]()
 
-- Priamry contributions were
+- Primary contributions were
 - Link to About Me Page
 
 ### ![Erik Plachta](https://s.gravatar.com/avatar/cde2e5381aa5e6d8d0220c46edee8f88?s=30) [Erik Plachta](www.github.com/erikplachta)
 
-- Priamry contributions were
+- Primary contributions were
 - Link to About Me Page
 
 
