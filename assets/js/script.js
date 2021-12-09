@@ -29,16 +29,130 @@ const datetime_12 = function() { return moment().format("YYYYMMDD hh:mm:ss:ms a"
 //-- event specific globals
 var user_FirstLogin = false;
 
+
+
+
 /*----------------------------------------------------------------------------*/
-/*-- X --> START
+//-- START -> BUILD CONTENT
 
 
-    TODO:: 12/08 #EP || Define next thing to do
+function _set_Results(response){
+    //-- Get's results from _get_City(cityName), builds content
 
-*/
+    console.log("//-- START --> function _set_Results(response)")
+    console.log(response)
 
 
-//-- X --> END
+    // get animals container to append child below
+    let animals_Section = document.getElementById("animals");
+    
+    // clear it out if former content to add new
+    animals_Section.innerHTML ="";
+
+    for (key in response){
+        console.log(key);
+        if(key == "pagination"){
+            console.log(response[key])
+        };
+
+        if(key == "animals"){
+            console.log(response[key]) // the container holding all the animals
+            for(animal in response[key]){
+                console.log(response[key][animal]) // each animal
+                let animal_JSON = response[key][animal]
+
+                // Create DIV to hold animal
+                var div = document.createElement("div");
+
+                
+                // set the div class as animal for css
+                div.setAttribute("class","animal");
+                // Make animals ID the div element ID
+                div.setAttribute("id", animal_JSON.id);
+
+                div.innerHTML = 
+                        +'<span class="name">Name: ' + animal_JSON.name + '</span>'
+                        +'<span class="age">Age: ' + animal_JSON.age + '</span>'
+                        +'<span class="gender">Gender: ' + animal_JSON.gender + '</span>'
+                        +'<span class="size">Size: ' + animal_JSON.size + '</span>'
+                        +'<span class="description">Size: ' + animal_JSON.description + '</span>'
+                        +'<span class="url"><a href="'+ animal_JSON.url + '">Petfinder URL</a></span>'
+                
+                animals_Section.appendChild(div);
+            }
+        };
+    }
+
+
+
+        // build response header
+
+        //build response days
+    
+
+    console.log("//-- END --> function _set_Results(response)")
+    return null;
+}
+
+//-- END -> BUILD CONTENT
+/*----------------------------------------------------------------------------*/
+//-- START -> API - PETFINDER 
+
+// TODO:: 12/09/2021 #EP || figure out if I need this or if to just delete it. 
+const api_Petfinder = {
+
+    // https://www.petfinder.com/developers/v2/docs/#get-animals
+    animals: "https://api.petfinder.com/v2/animals",
+
+    // https://www.petfinder.com/developers/v2/docs/#get-animal
+    animal: "https://api.petfinder.com/v2/animals/{id}",
+    
+    // https://www.petfinder.com/developers/v2/docs/#get-animal-types
+    types: "https://api.petfinder.com/v2/types",
+    
+    // https://www.petfinder.com/developers/v2/docs/#get-a-single-animal-type
+    type: "https://api.petfinder.com/v2/type/{type}",
+    
+    // https://www.petfinder.com/developers/v2/docs/#get-animal-breeds
+    breeds: "https://api.petfinder.com/v2/types/{type}/breeds",
+    
+    // https://www.petfinder.com/developers/v2/docs/#organization
+    organizations: "https://api.petfinder.com/v2/organizations",
+
+    // https://www.petfinder.com/developers/v2/docs/#get-organization
+    organization: "https://api.petfinder.com/v2/organizations/",
+};
+
+
+var url = 'https://api.openpeoplesearch.com/api/v1/User/authenticate';
+
+// const res = await fetch('http://api.petfinder.com/v2/animals&grant_type=client_credentials&client_id='+apiKey+'&client_secret='+secret+';
+    
+const _get_api_Petfinder_zip = async (zipcode) => {
+    
+    
+
+    // api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}
+    const response = (async () => {
+        // let cityName = 'Charlotte';
+        const res = await fetch(
+                url,
+                { 
+                    Authorization: "Bearer " + "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJpRG90cHVIdkpSSEJGcTZndm1qMmJPVERHRWlWTldWeFRyREZxb3BrT0pCUVJDM2EwciIsImp0aSI6ImU2MjhkNTMyMjcwZGU5OTZkOTQyNjBlNTVjMDYwNzU3NWFkOWEwZjA2NmRmN2FlZGZhYWZjZWE2ZmQ5Y2FlZDJmMDdkMjg5Njk2MmUyNmZiIiwiaWF0IjoxNjM5MDg0ODU4LCJuYmYiOjE2MzkwODQ4NTgsImV4cCI6MTYzOTA4ODQ1OCwic3ViIjoiIiwic2NvcGVzIjpbXX0.e6x6V7C15PrEhJiX_97Jc_o8hEVV0thXj1FGPdZHRZZKUCBVksbVI74FcP7rgb_qJWUG2Q51CZs5_eyMJv8u-2plZ5Yq0rSVUnBgB-pNMKixKrqu2SF3LZkbrVoSIIPO6LsNAMrw7d-IcYjZC0vz2rCK_8TWcBFG-cXTiIocIMIsrOh6hn8BAh6U3p3txpz8cppl3wNIA1jiBlSjWkemXSaKxJl5Vf-o1QRTVvkB_wvszq3UOdCliERnT3cp9QizVPK_fdiLgefhcQQIU3-ydt8konjCzwrtVgIEd88MEBoSrzkhJBstwSfeChpA3Di6Axn6yzfvOIQv_yEIUlIzAQ"
+                    
+                    
+                }
+            );
+        const json = await res.json();
+        console.log("Got results: ",json);
+        // _set_Results(json)
+      })();
+      return response;
+};
+// console.log(_get_api_Petfinder_zip())
+
+
+
 /*----------------------------------------------------------------------------*/
 /*-- DATABASE MANAGEMENT --> START
     - Manages all database related functionality with three functions. 
@@ -388,5 +502,34 @@ else {
 }
 
 
+
+
 //-- RUNNING --> END
 /*----------------------------------------------------------------------------*/
+
+
+const _get_TestData= async (cityName) => {
+
+    const response = (async () => {
+        // let cityName = 'Charlotte';
+        const res = await fetch("./assets/json/test_Cats.json");
+        const json = await res.json();
+        console.log("Got results - in get data: ",json);
+        _set_Results(json)
+    })();
+    // _set_Results(response);
+    
+    return null;
+}
+
+_get_TestData()
+
+
+
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+
+sleep(100);

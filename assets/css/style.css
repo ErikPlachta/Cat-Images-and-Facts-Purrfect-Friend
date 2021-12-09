@@ -88,6 +88,33 @@ nav {
 
 }
 
+
+.animals{
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: row;
+  border: 1px solid red;
+}
+
+.animal {
+  min-width: 200px;
+  max-width: 200px;
+
+  min-height: 250px;
+  max-height: 250px;
+
+  margin: 1rem;
+  display: flex;
+  flex-direction: wrap;
+  flex-flow: column;
+  border: 1px solid green;
+}
+
+.animal span {
+  border: 1px solid rgba(0,0,0,.1);
+  
+}
+
 /* HEADER & NAV --> END */
 /* -------------------------------------------------------------------------- */
 /* FOOTER --> START */
