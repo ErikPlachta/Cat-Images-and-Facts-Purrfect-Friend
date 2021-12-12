@@ -30,72 +30,83 @@ const datetime_12 = function() { return moment().format("YYYYMMDD hh:mm:ss:ms a"
 
 //-- END --> GLOBALS 
 /*----------------------------------------------------------------------------*/
-//-- START -> BUILD CONTENT
+//-- START -> FETCH & BUILD CONTENT
 
-function _set_Results(response){
+//-- Gets URL from TheCatAPI
+const _get_TheCatAPI = async () => {
+
+    const response = (async () => {
+        
+        const res = await fetch("https://api.thecatapi.com/v1/images/search");
+        const json = await res.json();
+        console.log("Got results - in get data: ",json);
+        //TODO::12/12/2021 #EPCB || Add if/else catch. If fails to fetch
+        _build_Content(json)
+    })();
+    return null;
+}
+
+//-- Gets Cat Fact from catfact.ninja
+const _set_CatFactsApi = async () => {
+
+    const response = (async () => {
+        
+        const res = await fetch("https://catfact.ninja/fact");
+        const json = await res.json();
+        console.log("Got results - in get data: ",json.fact);
+        //TODO::12/12/2021 #EPCB || Add if/else catch. If fails to fetch
+        $("#catFact").text(json.fact);
+    })();
+    // _build_Content(response);
+    
+    return null;
+}
+
+
+function _build_Content(response){
     /* Takes Fetch Results from JSON and builds website content dynamically */
 
-    //TODO:: 12/12/2021 #EP || BUILD FOR NEW APIS AND REMOVE PET FINDER STUFF
-
-    //-- Get's results from _get_City(cityName), builds content
-
     //TODO:: 12/12/2021 #EP || Delete when done testing
-    console.log("//-- START --> function _set_Results(response)")
+    // console.log("//-- START --> function _build_Content(response)")
     //TODO:: 12/12/2021 #EP || Delete when done testing
-    console.log(response)
-
+    // console.log("//-- Response: " ,response)
 
     // get animals container to append child below
     let animals_Section = document.getElementById("animals");
     
     // clear it out if former content to add new
-    animals_Section.innerHTML ="";
+    animals_Section.innerHTML = "";
 
     for (key in response){
-        console.log(key);
+        //TODO:: delete this
+        console.log("//-- Key: ",key);
 
-        //TODO:: 12/12/2021 #EP || Convert to other APIs
-        if(key == "pagination"){
-            console.log(response[key])
-        };
+        var results = response[key];
+        //-- TODO:: Remove once done testing
+        console.log("result:", results.url);
+       
+        // Create DIV to hold animal
+        var div = document.createElement("div");
+        
+        // set the div class as animal for css
+        div.setAttribute("class","animal_Img");
 
-        //TODO:: 12/12/2021 #EP || Convert to other APIs
-        if(key == "animals"){
-            console.log(response[key]) // the container holding all the animals
-            for(animal in response[key]){
-                console.log(response[key][animal]) // each animal
-                let animal_JSON = response[key][animal]
+        // Make animals ID the div element ID
+        div.setAttribute("id", results.id);
 
-                // Create DIV to hold animal
-                var div = document.createElement("div");
-
-                
-                // set the div class as animal for css
-                div.setAttribute("class","animal");
-                // Make animals ID the div element ID
-                div.setAttribute("id", animal_JSON.id);
-
-                div.innerHTML = 
-                        +'<span class="name">Name: ' + animal_JSON.name + '</span>'
-                        +'<span class="age">Age: ' + animal_JSON.age + '</span>'
-                        +'<span class="gender">Gender: ' + animal_JSON.gender + '</span>'
-                        +'<span class="size">Size: ' + animal_JSON.size + '</span>'
-                        +'<span class="description">Size: ' + animal_JSON.description + '</span>'
-                        +'<span class="url"><a href="'+ animal_JSON.url + '">Petfinder URL</a></span>'
-                
-                animals_Section.appendChild(div);
-            }
-        };
+        //-- Creating HTML content to dynamically build onto page
+        div.innerHTML = 
+            //TODO:: 12/12/2021 #EPCB || Do we want a random name to generate?
+            '<h3 class="animal_Name">ID: '+results.id+'</h3>'
+            +'<img class="animal" alt="Random Cat Image" src="' + results.url + '">'
+            +'<span id="catFact"></span>'
+        
+        animals_Section.appendChild(div);
+        
     }
 
-
-
-        // build response header
-
-        //build response days
-    
-
-    console.log("//-- END --> function _set_Results(response)")
+    _set_CatFactsApi()
+    console.log("//-- END --> function _build_Content(response)")
     return null;
 }
 
@@ -155,7 +166,6 @@ function get_Database(){
     //-- Returns JSON dict
     return database_Current;
 };
-
 
 function set_Database(entry) {
     /* Use to set database values in Local Storage. Verify, merge, append, and
@@ -311,7 +321,6 @@ function set_Database(entry) {
 };
 //-- END -> set_Database(entry)
 
-
 function _load_Database() {
     //-- Default database to ensure required content always exists
     
@@ -390,9 +399,9 @@ _load_Database();
 
 /* 2. Update Page Setings */
 
-/* 3. Load APIs */
+/* 3. Load APIs & Build Page Dynamically */
+_get_TheCatAPI()
 
-/* 4. Build Page */
 
 
 //TODO:: 12/12/2021 #EP | Whats this?
@@ -414,46 +423,16 @@ const _get_TestData = async () => {
         const res = await fetch("./assets/json/test_Cats.json");
         const json = await res.json();
         console.log("Got results - in get data: ",json);
-        _set_Results(json)
+        _build_Content(json);
+        //TODO::12/12/2021 #EPCB || Add if/else catch. If fails to fetch
     })();
-    // _set_Results(response);
+    // _build_Content(response);
     
     return null;
 }
 // _get_TestData()
 
 
-
-const _get_TheCatAPI = async () => {
-
-    const response = (async () => {
-        
-        const res = await fetch("https://api.thecatapi.com/v1/images/search");
-        const json = await res.json();
-        console.log("Got results - in get data: ",json);
-        // _set_Results(json)
-    })();
-    // _set_Results(response);
-    
-    return null;
-}
-_get_TheCatAPI()
-
-
-const _get_CatFactsApi = async () => {
-
-    const response = (async () => {
-        
-        const res = await fetch("https://catfact.ninja/fact");
-        const json = await res.json();
-        console.log("Got results - in get data: ",json);
-        // _set_Results(json)
-    })();
-    // _set_Results(response);
-    
-    return null;
-}
-_get_CatFactsApi()
 
 //-- END --> TESTING
 /*----------------------------------------------------------------------------*/

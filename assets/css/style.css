@@ -93,18 +93,17 @@ nav {
   display: flex;
   flex-flow: wrap;
   flex-direction: row;
+  /* TODO:: DELETE ME */
   border: 1px solid red;
 }
 
 
 /* The DIV holding each animal */
 .animal {
-
   /*Forcing defaults to containers for now */
-  min-width: 200px;
-  max-width: 200px;
+  
   min-height: 250px;
-  max-height: 250px;
+  max-height: 350px;
 
 
   /*Space around containers */
@@ -118,8 +117,9 @@ nav {
   /* Make everything space evenly within animal div */
   justify-content: space-between;
   
-  /* Adding border to make it easy to see */
-  border: 1px solid green;
+  
+  /* TODO:: DELETE ME */
+  border: 1px solid blue; 
 }
 
 .animal span {
