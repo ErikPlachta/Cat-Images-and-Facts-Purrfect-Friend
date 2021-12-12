@@ -64,7 +64,6 @@ const _set_CatFactsApi = async () => {
     return null;
 }
 
-
 function _build_Content(response){
     /* Takes Fetch Results from JSON and builds website content dynamically */
 
@@ -77,7 +76,7 @@ function _build_Content(response){
     let animals_Section = document.getElementById("animals");
     
     // clear it out if former content to add new
-    animals_Section.innerHTML = "";
+    // animals_Section.innerHTML = "";
 
     for (key in response){
         //TODO:: delete this
@@ -103,9 +102,12 @@ function _build_Content(response){
             +'<img class="animal" alt="Random Cat Image" src="' + results.url + '">'
             +'<span id="catFact_'+results.id+'"></span>'
 
-        console.log(div);
+        
+
         animals_Section.appendChild(div);
+        console.log(animals_Section)
         current_ID = "catFact_" +results.id;
+        console.log($("#animals").html());
     }
 
     _set_CatFactsApi()
@@ -257,7 +259,7 @@ function set_Database(entry) {
             
             /* FOR EACH DATE IN TIMELINE
 
-                Itterate through userdata.timeline dates, update the database.
+                Iterate through userdata.timeline dates, update the database.
                 Used when page runs, so if new date on load new timeline entry
             */
             for(date in entry.userdata.timeline){
@@ -274,7 +276,7 @@ function set_Database(entry) {
 
         //-- If entry provides setting values
         if (entry.settings != null){
-            // Merge settings_Current together from curent and entry
+            // Merge settings_Current together from current and entry
             settings_Current = Object.assign({},settings_Current, entry.settings);            
         } 
 
@@ -282,7 +284,7 @@ function set_Database(entry) {
         if (entry.api != null){        
             // TODO:: 12/08/2021 #EP || Confirm if this is working once api data in
             
-            // Merge settings_Current together from curent and entry
+            // Merge settings_Current together from current and entry
             api_Current = Object.assign({},api_Current, entry.api);
         } 
     }; 
