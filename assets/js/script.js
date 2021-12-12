@@ -1,45 +1,47 @@
 //--    Custom JS for Purrfect Friend
-//--    Author(s): Erik Plachta, 
+//--    Author(s): Erik Plachta, Connie Barrantes
 //--    Date_Created: 12/07/2021 
 
-
 /* -------------------------------------------------------------------------- */
-//-- GLOBALS -> START
-
+//-- START --> GLOBALS 
 
 // For local storage DB
-var database_Name = "purrfect-friend";
+const database_Name = "purrfect-friend";
 
+
+//-----------------------------
+//-- TIME RELATED VARIABLES
 
 // Total Hours in Day
-var hours_Day = 24;
+const hours_Day = 24;
 
 // Moment JS date
 const today = function() {return moment().format("dddd, MMMM Do YYYY")};
 
-// hour in 24 hour format - hour | minute | second | miliseconds | am-pm
+// hour in 24 hour format - hour (24) | minute | second | miliseconds | am-pm
 const time_24 = function() { return moment().format("HH:mm:ss:ms a")};
 
-// hour in 12 hour format - hour | minute | second | miliseconds | am-pm
+// hour in 12 hour format - hour (12) | minute | second | miliseconds | am-pm
 const time_12 = function() { return moment().format("hh:mm:ss:ms a")};
 
 //date & time for database logging down to the milisecond
 const datetime_12 = function() { return moment().format("YYYYMMDD hh:mm:ss:ms a")};
 
-//-- event specific globals
-var user_FirstLogin = false;
 
-
-
-
+//-- END --> GLOBALS 
 /*----------------------------------------------------------------------------*/
 //-- START -> BUILD CONTENT
 
-
 function _set_Results(response){
+    /* Takes Fetch Results from JSON and builds website content dynamically */
+
+    //TODO:: 12/12/2021 #EP || BUILD FOR NEW APIS AND REMOVE PET FINDER STUFF
+
     //-- Get's results from _get_City(cityName), builds content
 
+    //TODO:: 12/12/2021 #EP || Delete when done testing
     console.log("//-- START --> function _set_Results(response)")
+    //TODO:: 12/12/2021 #EP || Delete when done testing
     console.log(response)
 
 
@@ -51,10 +53,13 @@ function _set_Results(response){
 
     for (key in response){
         console.log(key);
+
+        //TODO:: 12/12/2021 #EP || Convert to other APIs
         if(key == "pagination"){
             console.log(response[key])
         };
 
+        //TODO:: 12/12/2021 #EP || Convert to other APIs
         if(key == "animals"){
             console.log(response[key]) // the container holding all the animals
             for(animal in response[key]){
@@ -96,68 +101,10 @@ function _set_Results(response){
 
 //-- END -> BUILD CONTENT
 /*----------------------------------------------------------------------------*/
-//-- START -> API - PETFINDER 
-
-// TODO:: 12/09/2021 #EP || figure out if I need this or if to just delete it. 
-const api_Petfinder = {
-
-    // https://www.petfinder.com/developers/v2/docs/#get-animals
-    animals: "https://api.petfinder.com/v2/animals",
-
-    // https://www.petfinder.com/developers/v2/docs/#get-animal
-    animal: "https://api.petfinder.com/v2/animals/{id}",
-    
-    // https://www.petfinder.com/developers/v2/docs/#get-animal-types
-    types: "https://api.petfinder.com/v2/types",
-    
-    // https://www.petfinder.com/developers/v2/docs/#get-a-single-animal-type
-    type: "https://api.petfinder.com/v2/type/{type}",
-    
-    // https://www.petfinder.com/developers/v2/docs/#get-animal-breeds
-    breeds: "https://api.petfinder.com/v2/types/{type}/breeds",
-    
-    // https://www.petfinder.com/developers/v2/docs/#organization
-    organizations: "https://api.petfinder.com/v2/organizations",
-
-    // https://www.petfinder.com/developers/v2/docs/#get-organization
-    organization: "https://api.petfinder.com/v2/organizations/",
-};
-
-
-var url = 'https://api.openpeoplesearch.com/api/v1/User/authenticate';
-
-// const res = await fetch('http://api.petfinder.com/v2/animals&grant_type=client_credentials&client_id='+apiKey+'&client_secret='+secret+';
-    
-const _get_api_Petfinder_zip = async (zipcode) => {
-    
-    
-
-    
-    const response = (async () => {
-        // let cityName = 'Charlotte';
-        const res = await fetch(
-                url,
-                { 
-                    Authorization: "Bearer " + "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJpRG90cHVIdkpSSEJGcTZndm1qMmJPVERHRWlWTldWeFRyREZxb3BrT0pCUVJDM2EwciIsImp0aSI6ImU2MjhkNTMyMjcwZGU5OTZkOTQyNjBlNTVjMDYwNzU3NWFkOWEwZjA2NmRmN2FlZGZhYWZjZWE2ZmQ5Y2FlZDJmMDdkMjg5Njk2MmUyNmZiIiwiaWF0IjoxNjM5MDg0ODU4LCJuYmYiOjE2MzkwODQ4NTgsImV4cCI6MTYzOTA4ODQ1OCwic3ViIjoiIiwic2NvcGVzIjpbXX0.e6x6V7C15PrEhJiX_97Jc_o8hEVV0thXj1FGPdZHRZZKUCBVksbVI74FcP7rgb_qJWUG2Q51CZs5_eyMJv8u-2plZ5Yq0rSVUnBgB-pNMKixKrqu2SF3LZkbrVoSIIPO6LsNAMrw7d-IcYjZC0vz2rCK_8TWcBFG-cXTiIocIMIsrOh6hn8BAh6U3p3txpz8cppl3wNIA1jiBlSjWkemXSaKxJl5Vf-o1QRTVvkB_wvszq3UOdCliERnT3cp9QizVPK_fdiLgefhcQQIU3-ydt8konjCzwrtVgIEd88MEBoSrzkhJBstwSfeChpA3Di6Axn6yzfvOIQv_yEIUlIzAQ"
-                    
-                    
-                }
-            );
-        const json = await res.json();
-        console.log("Got results: ",json);
-        // _set_Results(json)
-      })();
-      return response;
-};
-// console.log(_get_api_Petfinder_zip())
-
-
-
-/*----------------------------------------------------------------------------*/
 /*-- DATABASE MANAGEMENT --> START
-    - Manages all database related functionality with three functions. 
-    - Runs all three on start.
 
+    - Manages all database related functionality with three functions. 
+    - Runs all three on APP start-up.
 
         get_Database()
             - Use to to get the current database in JSON format.
@@ -181,10 +128,12 @@ const _get_api_Petfinder_zip = async (zipcode) => {
 function get_Database(){
     // Use to to get the current database in JSON format. Always returns dict.
 
-    
     // Get Database from local storage, build into JSON dict
     let database_Current = JSON.parse(localStorage.getItem(database_Name));
+
+    //TODO:: 12/12/2021 #EP || DELETE Once done testing
     console.log("function get_Database(): database_Current: ",database_Current);
+
     // If database exists
     if (database_Current != null) {
         
@@ -203,7 +152,7 @@ function get_Database(){
         };
     };
     
-    // Return JSON dict
+    //-- Returns JSON dict
     return database_Current;
 };
 
@@ -215,9 +164,20 @@ function set_Database(entry) {
     
     //--------------------------------
     //-- LOCAL VAR --> START
-
-    // Used to merge existing and new database changes, then written to Local Storage
+    
+    /* What WILL be saved as new
+        Used to merge existing and new database changes,
+        then written to Local Storage
+    */
     let database_New = {userdata:{}, settings:{}, api:{} };
+
+
+    /* What's in the database right now  
+             Getting local storage database to add to new OBJ to
+             re-write to storage once verified 
+    */
+    let database_Current = get_Database();
+
     
     // Used to hold current database values if they exist
     let userdata_Current = {};
@@ -226,10 +186,7 @@ function set_Database(entry) {
     
     //-- LOCAL VAR --> END
     //--------------------------------
-    // DATABASE INTEGRITY --> START
-    
-    // Getting local storage database to add to new OBJ to re-write to storage once verified
-    let database_Current = get_Database(); 
+    // DATABASE INTEGRITY --> START  
 
     // If a Database in Local Storage already exists, verify & collect keys + content
         //-- NOTE: If not true, it's a new database.
@@ -266,6 +223,7 @@ function set_Database(entry) {
     // DATABASE INTEGRITY -> END // 
     //--------------------------------//
     //-- ENTRY INTEGRITY -> START //
+
 
     //-- TODO:: 12/08/2021 #EP || If the entry fits required params or not. ( a later thing )
 
@@ -324,7 +282,7 @@ function set_Database(entry) {
     */ 
     
     // Grab current userdata Keys and merge
-    Object.keys(userdata_Current).forEach((key) => {    
+    Object.keys(userdata_Current).forEach((key) => {
         // Add keys to dictionary
         database_New.userdata[key] = (userdata_Current[key]);
     });
@@ -343,7 +301,8 @@ function set_Database(entry) {
 
     //-- END -> BUILDING DICTIONARY  
     
-     console.log("function set_Database(entry): database_New ", database_New);
+    //TODO:: 12/12/2021 #EP || Delete once done testing.
+    console.log("function set_Database(entry): database_New ", database_New);
 
     // Updating Database
     localStorage.setItem(database_Name, JSON.stringify(database_New));
@@ -381,6 +340,7 @@ function _load_Database() {
             saved: {},
 
             //-- first login ever
+            //TODO: 12/12/2021 #EP || Fix this, it's overwriting every refresh
             login_First: null, //TODO:: 12/08/2021 #EP || Make only update once
             //-- last login ever.
             login_Last: datetime_12(),
@@ -401,114 +361,53 @@ function _load_Database() {
         
         //-- API SETTINGS
         api: {
-            petfinder: {}
+            catfactninja: {
+                docs: "https://catfact.ninja/docs/api-docs.json",
+            },
+            thecatapi: {
+                docs: "https://docs.thecatapi.com/"
+            }
         }
     };
     //-- end of database_Default
 
-    console.log("function _load_Database() database_Default: ",database_Default) //TODO:: 12/08/2021 #EP || Delete console.log once done testing
+    //TODO:: 12/08/2021 #EP || Delete console.log once done testing
+    console.log("function _load_Database() database_Default: ",database_Default) 
     
-    // Set Default Database 
+    //-- Set Default Database 
     set_Database(database_Default);
     
     return null;
 };
 
 //-- DATABASE MANAGEMENT --> END
-/* -------------------------------------------------------------------------- */
-//-- TESTING --> START
-
-function _set_DemoData(){
-    //-- Overwrites current database with demo data to simplify testing.
-    
-    let demo_Database = {
-            
-        //-- USER SESSION DATA
-        //-- USER SESSION DATA
-        userdata: {
-            
-            //-- running log of dates user logged in
-            timeline: {
-                
-                //build todays date into database
-                [(moment().format("YYYYMMDD"))]: {
-                    //-- first login of the day
-                    login_First: null,
-                    //-- last login of the day
-                    login_Last: (moment().format("YYYYMMDD hh:mm:ss:ms a")),
-                     //-- record of search parameters
-                    search_Requests: {},
-                    //-- record of what was clicked on
-                    view_History: {}
-                },
-            },
-            //-- users saved list. Stores full payload
-            saved: {},
-            
-            //-- first login ever
-            login_First: '20211208 17:12:64:126 pm', //TODO:: 12/08/2021 #EP || Make only update once
-            //-- last login ever.
-            login_Last:  (moment().format("YYYYMMDD hh:mm:ss:ms a")),
-        },
-        
-        //-- APP SETTINGS
-        settings: {
-            defaults: {
-                timeZone: null, // TODO:: 12/08/2021 #EP || Set a Default Time Zone based on browser
-            },
-            // If user defines these settings_Current, will over-ride defaults
-            user: {
-                timeZone: null,
-                zipCode: null,
-                city: null
-            },
-        },
-        
-        //-- API SETTINGS
-        api: {
-            petfinder: {
-
-            }
-        }
-    };
-
-    console.log("function _set_DemoData() demo_Database: ",demo_Database) //TODO:: 12/08/2021 #EP || Delete console.log once done testing
-
-    //Auto builds database overwriting current
-    localStorage.setItem("purrfect-friend",JSON.stringify(demo_Database));
-
-    return null;
-};
-
-//-- TESTING --> END
 /*----------------------------------------------------------------------------*/
 //-- RUNNING --> START
 
-let testing = false;
 
-if (testing == false){
-    /* 1. Load the database */
-    _load_Database();
+/* 1. Load the database */
+_load_Database();
 
-    /* 2. Update Page Setings */
+/* 2. Update Page Setings */
 
-    /* 3. Load APIs */
+/* 3. Load APIs */
 
-    /* 4. Build Page */
-}
-else {
-    console.log("//-- RUNNING TEST")
-    _set_DemoData();
-}
+/* 4. Build Page */
 
 
+//TODO:: 12/12/2021 #EP | Whats this?
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+sleep(100);
 
 
 //-- RUNNING --> END
 /*----------------------------------------------------------------------------*/
+//-- START --> TESTING
 
-
-const _get_TestData= async (cityName) => {
+const _get_TestData = async () => {
+    //-- Used to pull local JSON file to page for testing
 
     const response = (async () => {
         // let cityName = 'Charlotte';
@@ -521,7 +420,6 @@ const _get_TestData= async (cityName) => {
     
     return null;
 }
-
 // _get_TestData()
 
 
@@ -529,11 +427,11 @@ const _get_TestData= async (cityName) => {
 const _get_TheCatAPI = async () => {
 
     const response = (async () => {
-        // let cityName = 'Charlotte';
+        
         const res = await fetch("https://api.thecatapi.com/v1/images/search");
         const json = await res.json();
         console.log("Got results - in get data: ",json);
-        _set_Results(json)
+        // _set_Results(json)
     })();
     // _set_Results(response);
     
@@ -542,11 +440,20 @@ const _get_TheCatAPI = async () => {
 _get_TheCatAPI()
 
 
+const _get_CatFactsApi = async () => {
 
+    const response = (async () => {
+        
+        const res = await fetch("https://catfact.ninja/fact");
+        const json = await res.json();
+        console.log("Got results - in get data: ",json);
+        // _set_Results(json)
+    })();
+    // _set_Results(response);
+    
+    return null;
+}
+_get_CatFactsApi()
 
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-
-
-sleep(100);
+//-- END --> TESTING
+/*----------------------------------------------------------------------------*/
