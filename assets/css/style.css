@@ -88,6 +88,45 @@ nav {
 
 }
 
+
+.animals{
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: row;
+  /* TODO:: DELETE ME */
+  border: 1px solid red;
+}
+
+
+/* The DIV holding each animal */
+.animal {
+  /*Forcing defaults to containers for now */
+  
+  min-height: 250px;
+  max-height: 350px;
+
+
+  /*Space around containers */
+  margin: 1rem;
+
+  /*Making each SPAN within each animal in it's own row */
+  display: flex;
+  flex-direction: wrap;
+  flex-flow: column;
+  
+  /* Make everything space evenly within animal div */
+  justify-content: space-between;
+  
+  
+  /* TODO:: DELETE ME */
+  border: 1px solid blue; 
+}
+
+.animal span {
+  border: 1px solid rgba(0,0,0,.1);
+  
+}
+
 /* HEADER & NAV --> END */
 /* -------------------------------------------------------------------------- */
 /* FOOTER --> START */
