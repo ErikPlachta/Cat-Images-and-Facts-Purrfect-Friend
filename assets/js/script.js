@@ -132,7 +132,7 @@ const _get_api_Petfinder_zip = async (zipcode) => {
     
     
 
-    // api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}
+    
     const response = (async () => {
         // let cityName = 'Charlotte';
         const res = await fetch(
@@ -522,7 +522,24 @@ const _get_TestData= async (cityName) => {
     return null;
 }
 
-_get_TestData()
+// _get_TestData()
+
+
+
+const _get_TheCatAPI = async () => {
+
+    const response = (async () => {
+        // let cityName = 'Charlotte';
+        const res = await fetch("https://api.thecatapi.com/v1/images/search");
+        const json = await res.json();
+        console.log("Got results - in get data: ",json);
+        _set_Results(json)
+    })();
+    // _set_Results(response);
+    
+    return null;
+}
+_get_TheCatAPI()
 
 
 
