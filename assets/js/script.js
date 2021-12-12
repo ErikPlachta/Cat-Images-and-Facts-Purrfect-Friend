@@ -64,7 +64,6 @@ const _set_CatFactsApi = async () => {
     return null;
 }
 
-
 function _build_Content(response){
     /* Takes Fetch Results from JSON and builds website content dynamically */
 
