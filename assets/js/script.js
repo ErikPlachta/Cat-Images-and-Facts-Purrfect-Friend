@@ -8,8 +8,8 @@
 // For local storage DB
 const database_Name = "purrfect-friend";
 
-//-- Used 
-var current_El = '';
+//-- Used when building container holding image and cat-fact. Unique to each IMG span
+var current_ID = '';
 
 //-----------------------------
 //-- TIME RELATED VARIABLES
@@ -57,7 +57,7 @@ const _set_CatFactsApi = async () => {
         const json = await res.json();
         console.log("Got results - in get data: ",json.fact);
         //TODO::12/12/2021 #EPCB || Add if/else catch. If fails to fetch
-        $("#catFact").text(json.fact);
+        $("#"+current_ID).text(json.fact);
     })();
     // _build_Content(response);
     
@@ -101,10 +101,11 @@ function _build_Content(response){
             //TODO:: 12/12/2021 #EPCB || Do we want a random name to generate?
             '<h3 class="animal_Name">ID: '+results.id+'</h3>'
             +'<img class="animal" alt="Random Cat Image" src="' + results.url + '">'
-            +'<span id="catFact"></span>'
+            +'<span id="catFact_'+results.id+'"></span>'
+
         
         animals_Section.appendChild(div);
-        
+        current_ID = "catFact_" +results.id;
     }
 
     _set_CatFactsApi()
