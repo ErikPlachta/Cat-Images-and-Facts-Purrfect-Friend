@@ -1,0 +1,1419 @@
+{
+    "animals": [{
+        "id": 53848090,
+        "organization_id": "DE34",
+        "url": "https:\/\/www.petfinder.com\/cat\/chucky-dlh-fcid-number-09-02-2021-11-kc-53848090\/de\/wilmington\/forgotten-cats-inc-de34\/?referrer_id=24708ce2-e202-485f-83c9-e5f86adcea88",
+        "type": "Cat",
+        "species": "Cat",
+        "breeds": {
+            "primary": "Domestic Long Hair",
+            "secondary": null,
+            "mixed": false,
+            "unknown": false
+        },
+        "colors": {
+            "primary": "Gray \/ Blue \/ Silver",
+            "secondary": null,
+            "tertiary": null
+        },
+        "age": "Young",
+        "gender": "Male",
+        "size": "Medium",
+        "coat": null,
+        "attributes": {
+            "spayed_neutered": true,
+            "house_trained": true,
+            "declawed": false,
+            "special_needs": false,
+            "shots_current": true
+        },
+        "environment": {
+            "children": true,
+            "dogs": null,
+            "cats": true
+        },
+        "tags": [],
+        "name": "Chucky: DLH (FCID# 09\/02\/2021 - 11) KC",
+        "description": "5 month old kitten Chucky (FCID# 09\/02\/2021 - 11) is as wonderful and sweet as they come. He\u0026amp;#39;s a handsome,...",
+        "organization_animal_id": "17540022-FCID# 09-02-2021",
+        "photos": [],
+        "primary_photo_cropped": null,
+        "videos": [],
+        "status": "adoptable",
+        "status_changed_at": "2021-12-09T21:37:48+0000",
+        "published_at": "2021-12-09T21:37:48+0000",
+        "distance": null,
+        "contact": {
+            "email": "catgalleryinfo@gmail.com",
+            "phone": "(302) 429-0124",
+            "address": {
+                "address1": "4023 Kennett Pike",
+                "address2": "Suite 422",
+                "city": "Wilmington",
+                "state": "DE",
+                "postcode": "19808",
+                "country": "US"
+            }
+        },
+        "_links": {
+            "self": {
+                "href": "\/v2\/animals\/53848090"
+            },
+            "type": {
+                "href": "\/v2\/types\/cat"
+            },
+            "organization": {
+                "href": "\/v2\/organizations\/de34"
+            }
+        }
+    }, {
+        "id": 53848088,
+        "organization_id": "CA190",
+        "url": "https:\/\/www.petfinder.com\/cat\/kiana-53848088\/ca\/escondido\/san-diego-humane-society-escondido-campus-ca190\/?referrer_id=24708ce2-e202-485f-83c9-e5f86adcea88",
+        "type": "Cat",
+        "species": "Cat",
+        "breeds": {
+            "primary": "Domestic Short Hair",
+            "secondary": null,
+            "mixed": true,
+            "unknown": false
+        },
+        "colors": {
+            "primary": null,
+            "secondary": null,
+            "tertiary": null
+        },
+        "age": "Baby",
+        "gender": "Female",
+        "size": "Medium",
+        "coat": null,
+        "attributes": {
+            "spayed_neutered": true,
+            "house_trained": false,
+            "declawed": false,
+            "special_needs": false,
+            "shots_current": true
+        },
+        "environment": {
+            "children": null,
+            "dogs": null,
+            "cats": null
+        },
+        "tags": [],
+        "name": "Kiana",
+        "description": "How this pet arrived: Kiana was brought in as a stray when a tiny baby. She has spent some time...",
+        "organization_animal_id": "768813",
+        "photos": [],
+        "primary_photo_cropped": null,
+        "videos": [],
+        "status": "adoptable",
+        "status_changed_at": "2021-12-09T21:37:41+0000",
+        "published_at": "2021-12-09T21:37:41+0000",
+        "distance": null,
+        "contact": {
+            "email": "info@sdhumane.org",
+            "phone": "(619) 299-7012",
+            "address": {
+                "address1": "3500 Burnet Dr",
+                "address2": null,
+                "city": "Escondido",
+                "state": "CA",
+                "postcode": "92027",
+                "country": "US"
+            }
+        },
+        "_links": {
+            "self": {
+                "href": "\/v2\/animals\/53848088"
+            },
+            "type": {
+                "href": "\/v2\/types\/cat"
+            },
+            "organization": {
+                "href": "\/v2\/organizations\/ca190"
+            }
+        }
+    }, {
+        "id": 53848081,
+        "organization_id": "NJ03",
+        "url": "https:\/\/www.petfinder.com\/cat\/betty-and-veronica-53848081\/nj\/forked-river\/popcorn-park-ahs-forked-river-nj03\/?referrer_id=24708ce2-e202-485f-83c9-e5f86adcea88",
+        "type": "Cat",
+        "species": "Cat",
+        "breeds": {
+            "primary": "Domestic Short Hair",
+            "secondary": null,
+            "mixed": false,
+            "unknown": false
+        },
+        "colors": {
+            "primary": "Tabby (Brown \/ Chocolate)",
+            "secondary": null,
+            "tertiary": null
+        },
+        "age": "Baby",
+        "gender": "Female",
+        "size": "Medium",
+        "coat": "Short",
+        "attributes": {
+            "spayed_neutered": true,
+            "house_trained": true,
+            "declawed": false,
+            "special_needs": false,
+            "shots_current": true
+        },
+        "environment": {
+            "children": null,
+            "dogs": null,
+            "cats": true
+        },
+        "tags": [],
+        "name": "Betty and Veronica",
+        "description": "Betty and Veronica are two little sisters of about 6 months old that would just love a safe, quiet home...",
+        "organization_animal_id": "53333  53338",
+        "photos": [{
+            "small": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848081\/1\/?bust=1639085735\u0026width=100",
+            "medium": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848081\/1\/?bust=1639085735\u0026width=300",
+            "large": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848081\/1\/?bust=1639085735\u0026width=600",
+            "full": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848081\/1\/?bust=1639085735"
+        }, {
+            "small": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848081\/2\/?bust=1639085736\u0026width=100",
+            "medium": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848081\/2\/?bust=1639085736\u0026width=300",
+            "large": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848081\/2\/?bust=1639085736\u0026width=600",
+            "full": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848081\/2\/?bust=1639085736"
+        }, {
+            "small": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848081\/3\/?bust=1639085736\u0026width=100",
+            "medium": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848081\/3\/?bust=1639085736\u0026width=300",
+            "large": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848081\/3\/?bust=1639085736\u0026width=600",
+            "full": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848081\/3\/?bust=1639085736"
+        }, {
+            "small": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848081\/4\/?bust=1639085737\u0026width=100",
+            "medium": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848081\/4\/?bust=1639085737\u0026width=300",
+            "large": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848081\/4\/?bust=1639085737\u0026width=600",
+            "full": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848081\/4\/?bust=1639085737"
+        }, {
+            "small": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848081\/5\/?bust=1639085738\u0026width=100",
+            "medium": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848081\/5\/?bust=1639085738\u0026width=300",
+            "large": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848081\/5\/?bust=1639085738\u0026width=600",
+            "full": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848081\/5\/?bust=1639085738"
+        }],
+        "primary_photo_cropped": {
+            "small": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848081\/1\/?bust=1639085735\u0026width=300",
+            "medium": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848081\/1\/?bust=1639085735\u0026width=450",
+            "large": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848081\/1\/?bust=1639085735\u0026width=600",
+            "full": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848081\/1\/?bust=1639085735"
+        },
+        "videos": [],
+        "status": "adoptable",
+        "status_changed_at": "2021-12-09T21:35:41+0000",
+        "published_at": "2021-12-09T21:35:41+0000",
+        "distance": null,
+        "contact": {
+            "email": "njhumane2@aol.com",
+            "phone": "(609) 693-1900",
+            "address": {
+                "address1": "Humane Way - Box 43",
+                "address2": null,
+                "city": "Forked River",
+                "state": "NJ",
+                "postcode": "08731",
+                "country": "US"
+            }
+        },
+        "_links": {
+            "self": {
+                "href": "\/v2\/animals\/53848081"
+            },
+            "type": {
+                "href": "\/v2\/types\/cat"
+            },
+            "organization": {
+                "href": "\/v2\/organizations\/nj03"
+            }
+        }
+    }, {
+        "id": 53848067,
+        "organization_id": "CA2624",
+        "url": "https:\/\/www.petfinder.com\/cat\/adella-53848067\/ca\/playa-vista\/wallis-annenberg-petspace-ca2624\/?referrer_id=24708ce2-e202-485f-83c9-e5f86adcea88",
+        "type": "Cat",
+        "species": "Cat",
+        "breeds": {
+            "primary": "Domestic Short Hair",
+            "secondary": null,
+            "mixed": false,
+            "unknown": false
+        },
+        "colors": {
+            "primary": "Black",
+            "secondary": null,
+            "tertiary": null
+        },
+        "age": "Baby",
+        "gender": "Female",
+        "size": "Small",
+        "coat": null,
+        "attributes": {
+            "spayed_neutered": true,
+            "house_trained": false,
+            "declawed": false,
+            "special_needs": false,
+            "shots_current": true
+        },
+        "environment": {
+            "children": null,
+            "dogs": null,
+            "cats": null
+        },
+        "tags": [],
+        "name": "Adella",
+        "description": "Hi, I\u0026amp;#39;m Adella! I\u0026amp;#39;m an outgoing kitty looking for a kind and caring home. I\u0026amp;#39;d love to become your best...",
+        "organization_animal_id": "ANN-A-1320",
+        "photos": [],
+        "primary_photo_cropped": null,
+        "videos": [],
+        "status": "adoptable",
+        "status_changed_at": "2021-12-09T21:35:09+0000",
+        "published_at": "2021-12-09T21:35:09+0000",
+        "distance": null,
+        "contact": {
+            "email": "communications@annenbergpetspace.org",
+            "phone": "(424) 384-1801",
+            "address": {
+                "address1": "12005 Bluff Creek Dr",
+                "address2": null,
+                "city": "Playa Vista",
+                "state": "CA",
+                "postcode": "90094",
+                "country": "US"
+            }
+        },
+        "_links": {
+            "self": {
+                "href": "\/v2\/animals\/53848067"
+            },
+            "type": {
+                "href": "\/v2\/types\/cat"
+            },
+            "organization": {
+                "href": "\/v2\/organizations\/ca2624"
+            }
+        }
+    }, {
+        "id": 53848068,
+        "organization_id": "CA2624",
+        "url": "https:\/\/www.petfinder.com\/cat\/flounder-53848068\/ca\/playa-vista\/wallis-annenberg-petspace-ca2624\/?referrer_id=24708ce2-e202-485f-83c9-e5f86adcea88",
+        "type": "Cat",
+        "species": "Cat",
+        "breeds": {
+            "primary": "Domestic Short Hair",
+            "secondary": null,
+            "mixed": false,
+            "unknown": false
+        },
+        "colors": {
+            "primary": "Black",
+            "secondary": null,
+            "tertiary": null
+        },
+        "age": "Baby",
+        "gender": "Male",
+        "size": "Medium",
+        "coat": null,
+        "attributes": {
+            "spayed_neutered": true,
+            "house_trained": false,
+            "declawed": false,
+            "special_needs": false,
+            "shots_current": true
+        },
+        "environment": {
+            "children": null,
+            "dogs": null,
+            "cats": null
+        },
+        "tags": [],
+        "name": "Flounder",
+        "description": "Hi, I\u0026amp;#39;m Flounder! I\u0026amp;#39;m a funny kitty looking for a kind and caring home. I\u0026amp;#39;d love to become your best...",
+        "organization_animal_id": "ANN-A-1322",
+        "photos": [],
+        "primary_photo_cropped": null,
+        "videos": [],
+        "status": "adoptable",
+        "status_changed_at": "2021-12-09T21:35:09+0000",
+        "published_at": "2021-12-09T21:35:09+0000",
+        "distance": null,
+        "contact": {
+            "email": "communications@annenbergpetspace.org",
+            "phone": "(424) 384-1801",
+            "address": {
+                "address1": "12005 Bluff Creek Dr",
+                "address2": null,
+                "city": "Playa Vista",
+                "state": "CA",
+                "postcode": "90094",
+                "country": "US"
+            }
+        },
+        "_links": {
+            "self": {
+                "href": "\/v2\/animals\/53848068"
+            },
+            "type": {
+                "href": "\/v2\/types\/cat"
+            },
+            "organization": {
+                "href": "\/v2\/organizations\/ca2624"
+            }
+        }
+    }, {
+        "id": 53847914,
+        "organization_id": "MI760",
+        "url": "https:\/\/www.petfinder.com\/cat\/felix-53847914\/mi\/swartz-creek\/paws-rescue-mi760\/?referrer_id=24708ce2-e202-485f-83c9-e5f86adcea88",
+        "type": "Cat",
+        "species": "Cat",
+        "breeds": {
+            "primary": "Domestic Short Hair",
+            "secondary": null,
+            "mixed": false,
+            "unknown": false
+        },
+        "colors": {
+            "primary": "Tabby (Tiger Striped)",
+            "secondary": null,
+            "tertiary": null
+        },
+        "age": "Baby",
+        "gender": "Male",
+        "size": "Small",
+        "coat": "Short",
+        "attributes": {
+            "spayed_neutered": true,
+            "house_trained": true,
+            "declawed": false,
+            "special_needs": false,
+            "shots_current": true
+        },
+        "environment": {
+            "children": true,
+            "dogs": true,
+            "cats": true
+        },
+        "tags": [],
+        "name": "Felix",
+        "description": "Hi. My name is Felix. I am 3 months old (as of 12-9-21). I love to play. My favorite is...",
+        "organization_animal_id": null,
+        "photos": [{
+            "small": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53847914\/1\/?bust=1639085586\u0026width=100",
+            "medium": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53847914\/1\/?bust=1639085586\u0026width=300",
+            "large": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53847914\/1\/?bust=1639085586\u0026width=600",
+            "full": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53847914\/1\/?bust=1639085586"
+        }, {
+            "small": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53847914\/2\/?bust=1639085587\u0026width=100",
+            "medium": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53847914\/2\/?bust=1639085587\u0026width=300",
+            "large": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53847914\/2\/?bust=1639085587\u0026width=600",
+            "full": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53847914\/2\/?bust=1639085587"
+        }, {
+            "small": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53847914\/3\/?bust=1639085589\u0026width=100",
+            "medium": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53847914\/3\/?bust=1639085589\u0026width=300",
+            "large": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53847914\/3\/?bust=1639085589\u0026width=600",
+            "full": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53847914\/3\/?bust=1639085589"
+        }, {
+            "small": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53847914\/4\/?bust=1639085590\u0026width=100",
+            "medium": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53847914\/4\/?bust=1639085590\u0026width=300",
+            "large": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53847914\/4\/?bust=1639085590\u0026width=600",
+            "full": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53847914\/4\/?bust=1639085590"
+        }],
+        "primary_photo_cropped": {
+            "small": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53847914\/1\/?bust=1639085586\u0026width=300",
+            "medium": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53847914\/1\/?bust=1639085586\u0026width=450",
+            "large": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53847914\/1\/?bust=1639085586\u0026width=600",
+            "full": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53847914\/1\/?bust=1639085586"
+        },
+        "videos": [],
+        "status": "adoptable",
+        "status_changed_at": "2021-12-09T21:35:02+0000",
+        "published_at": "2021-12-09T21:35:02+0000",
+        "distance": null,
+        "contact": {
+            "email": "nikkiwolf25@aol.com",
+            "phone": null,
+            "address": {
+                "address1": "PO Box 87",
+                "address2": null,
+                "city": "Swartz Creek",
+                "state": "MI",
+                "postcode": "48473",
+                "country": "US"
+            }
+        },
+        "_links": {
+            "self": {
+                "href": "\/v2\/animals\/53847914"
+            },
+            "type": {
+                "href": "\/v2\/types\/cat"
+            },
+            "organization": {
+                "href": "\/v2\/organizations\/mi760"
+            }
+        }
+    }, {
+        "id": 53848058,
+        "organization_id": "GA219",
+        "url": "https:\/\/www.petfinder.com\/cat\/blossom-53848058\/ga\/augusta\/augusta-animal-services-ga219\/?referrer_id=24708ce2-e202-485f-83c9-e5f86adcea88",
+        "type": "Cat",
+        "species": "Cat",
+        "breeds": {
+            "primary": "Domestic Long Hair",
+            "secondary": null,
+            "mixed": false,
+            "unknown": false
+        },
+        "colors": {
+            "primary": null,
+            "secondary": null,
+            "tertiary": null
+        },
+        "age": "Young",
+        "gender": "Female",
+        "size": "Small",
+        "coat": null,
+        "attributes": {
+            "spayed_neutered": true,
+            "house_trained": false,
+            "declawed": false,
+            "special_needs": false,
+            "shots_current": false
+        },
+        "environment": {
+            "children": null,
+            "dogs": null,
+            "cats": null
+        },
+        "tags": [],
+        "name": "BLOSSOM",
+        "description": null,
+        "organization_animal_id": "A201254",
+        "photos": [],
+        "primary_photo_cropped": null,
+        "videos": [],
+        "status": "adoptable",
+        "status_changed_at": "2021-12-09T21:34:59+0000",
+        "published_at": "2021-12-09T21:34:59+0000",
+        "distance": null,
+        "contact": {
+            "email": null,
+            "phone": "706-790-6836   ",
+            "address": {
+                "address1": "4164 Mack Lane",
+                "address2": null,
+                "city": "Augusta",
+                "state": "GA",
+                "postcode": "30906",
+                "country": "US"
+            }
+        },
+        "_links": {
+            "self": {
+                "href": "\/v2\/animals\/53848058"
+            },
+            "type": {
+                "href": "\/v2\/types\/cat"
+            },
+            "organization": {
+                "href": "\/v2\/organizations\/ga219"
+            }
+        }
+    }, {
+        "id": 53848056,
+        "organization_id": "TX2018",
+        "url": "https:\/\/www.petfinder.com\/cat\/christian-53848056\/tx\/rosenberg\/fort-bend-county-animal-services-tx2018\/?referrer_id=24708ce2-e202-485f-83c9-e5f86adcea88",
+        "type": "Cat",
+        "species": "Cat",
+        "breeds": {
+            "primary": "Domestic Short Hair",
+            "secondary": null,
+            "mixed": false,
+            "unknown": false
+        },
+        "colors": {
+            "primary": null,
+            "secondary": null,
+            "tertiary": null
+        },
+        "age": "Baby",
+        "gender": "Male",
+        "size": "Small",
+        "coat": null,
+        "attributes": {
+            "spayed_neutered": false,
+            "house_trained": false,
+            "declawed": false,
+            "special_needs": false,
+            "shots_current": false
+        },
+        "environment": {
+            "children": null,
+            "dogs": null,
+            "cats": null
+        },
+        "tags": [],
+        "name": "CHRISTIAN",
+        "description": null,
+        "organization_animal_id": "A034702",
+        "photos": [],
+        "primary_photo_cropped": null,
+        "videos": [],
+        "status": "adoptable",
+        "status_changed_at": "2021-12-09T21:34:57+0000",
+        "published_at": "2021-12-09T21:34:57+0000",
+        "distance": null,
+        "contact": {
+            "email": "barbara.vass@fortbendcountytx.gov",
+            "phone": "(281) 342-1512",
+            "address": {
+                "address1": "1210 Blume Rd.",
+                "address2": null,
+                "city": "Rosenberg",
+                "state": "TX",
+                "postcode": "77471",
+                "country": "US"
+            }
+        },
+        "_links": {
+            "self": {
+                "href": "\/v2\/animals\/53848056"
+            },
+            "type": {
+                "href": "\/v2\/types\/cat"
+            },
+            "organization": {
+                "href": "\/v2\/organizations\/tx2018"
+            }
+        }
+    }, {
+        "id": 53848015,
+        "organization_id": "TX79",
+        "url": "https:\/\/www.petfinder.com\/cat\/bond-53848015\/tx\/denton\/city-of-denton-animal-services-tx79\/?referrer_id=24708ce2-e202-485f-83c9-e5f86adcea88",
+        "type": "Cat",
+        "species": "Cat",
+        "breeds": {
+            "primary": "Domestic Short Hair",
+            "secondary": null,
+            "mixed": false,
+            "unknown": false
+        },
+        "colors": {
+            "primary": "White",
+            "secondary": "Tabby (Orange \/ Red)",
+            "tertiary": null
+        },
+        "age": "Adult",
+        "gender": "Male",
+        "size": "Medium",
+        "coat": null,
+        "attributes": {
+            "spayed_neutered": false,
+            "house_trained": false,
+            "declawed": false,
+            "special_needs": false,
+            "shots_current": false
+        },
+        "environment": {
+            "children": null,
+            "dogs": null,
+            "cats": null
+        },
+        "tags": [],
+        "name": "Bond",
+        "description": "Bond\n96741\n1-2 years old\nAvailable for adoption 12\/11\/21\n\n\n*Please note animals will not be able to be seen or...",
+        "organization_animal_id": "96741",
+        "photos": [{
+            "small": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848015\/1\/?bust=1639085687\u0026width=100",
+            "medium": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848015\/1\/?bust=1639085687\u0026width=300",
+            "large": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848015\/1\/?bust=1639085687\u0026width=600",
+            "full": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848015\/1\/?bust=1639085687"
+        }],
+        "primary_photo_cropped": {
+            "small": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848015\/1\/?bust=1639085687\u0026width=300",
+            "medium": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848015\/1\/?bust=1639085687\u0026width=450",
+            "large": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848015\/1\/?bust=1639085687\u0026width=600",
+            "full": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/53848015\/1\/?bust=1639085687"
+        },
+        "videos": [],
+        "status": "adoptable",
+        "status_changed_at": "2021-12-09T21:34:57+0000",
+        "published_at": "2021-12-09T21:34:57+0000",
+        "distance": null,
+        "contact": {
+            "email": "Animal.Services@cityofdenton.com",
+            "phone": "(940) 349-7594",
+            "address": {
+                "address1": "3717 N Elm Street",
+                "address2": null,
+                "city": "Denton",
+                "state": "TX",
+                "postcode": "76205",
+                "country": "US"
+            }
+        },
+        "_links": {
+            "self": {
+                "href": "\/v2\/animals\/53848015"
+            },
+            "type": {
+                "href": "\/v2\/types\/cat"
+            },
+            "organization": {
+                "href": "\/v2\/organizations\/tx79"
+            }
+        }
+    }, {
+        "id": 53848052,
+        "organization_id": "TX487",
+        "url": "https:\/\/www.petfinder.com\/cat\/a624525-53848052\/tx\/san-antonio\/animal-care-services-division-city-of-san-antonio-tx487\/?referrer_id=24708ce2-e202-485f-83c9-e5f86adcea88",
+        "type": "Cat",
+        "species": "Cat",
+        "breeds": {
+            "primary": "Domestic Medium Hair",
+            "secondary": null,
+            "mixed": false,
+            "unknown": false
+        },
+        "colors": {
+            "primary": null,
+            "secondary": null,
+            "tertiary": null
+        },
+        "age": "Young",
+        "gender": "Male",
+        "size": "Medium",
+        "coat": null,
+        "attributes": {
+            "spayed_neutered": false,
+            "house_trained": false,
+            "declawed": false,
+            "special_needs": false,
+            "shots_current": false
+        },
+        "environment": {
+            "children": null,
+            "dogs": null,
+            "cats": null
+        },
+        "tags": [],
+        "name": "A624525",
+        "description": null,
+        "organization_animal_id": "A624525",
+        "photos": [],
+        "primary_photo_cropped": null,
+        "videos": [],
+        "status": "adoptable",
+        "status_changed_at": "2021-12-09T21:34:55+0000",
+        "published_at": "2021-12-09T21:34:55+0000",
+        "distance": null,
+        "contact": {
+            "email": "ACSAdoptions@sanantonio.gov",
+            "phone": "(210) 207-6666",
+            "address": {
+                "address1": "4710 State Hwy 151",
+                "address2": null,
+                "city": "San Antonio",
+                "state": "TX",
+                "postcode": "78227",
+                "country": "US"
+            }
+        },
+        "_links": {
+            "self": {
+                "href": "\/v2\/animals\/53848052"
+            },
+            "type": {
+                "href": "\/v2\/types\/cat"
+            },
+            "organization": {
+                "href": "\/v2\/organizations\/tx487"
+            }
+        }
+    }, {
+        "id": 53848054,
+        "organization_id": "NV26",
+        "url": "https:\/\/www.petfinder.com\/cat\/minette-53848054\/nv\/las-vegas\/the-animal-foundation-nv26\/?referrer_id=24708ce2-e202-485f-83c9-e5f86adcea88",
+        "type": "Cat",
+        "species": "Cat",
+        "breeds": {
+            "primary": "Siamese",
+            "secondary": null,
+            "mixed": true,
+            "unknown": false
+        },
+        "colors": {
+            "primary": null,
+            "secondary": null,
+            "tertiary": null
+        },
+        "age": "Young",
+        "gender": "Female",
+        "size": "Small",
+        "coat": null,
+        "attributes": {
+            "spayed_neutered": true,
+            "house_trained": false,
+            "declawed": false,
+            "special_needs": false,
+            "shots_current": false
+        },
+        "environment": {
+            "children": null,
+            "dogs": null,
+            "cats": null
+        },
+        "tags": [],
+        "name": "MINETTE",
+        "description": null,
+        "organization_animal_id": "A1203218",
+        "photos": [],
+        "primary_photo_cropped": null,
+        "videos": [],
+        "status": "adoptable",
+        "status_changed_at": "2021-12-09T21:34:55+0000",
+        "published_at": "2021-12-09T21:34:55+0000",
+        "distance": null,
+        "contact": {
+            "email": "adoptions@animalfoundation.com",
+            "phone": "702-384-3333  ext.131 ",
+            "address": {
+                "address1": "655 N. Mojave",
+                "address2": null,
+                "city": "Las Vegas",
+                "state": "NV",
+                "postcode": "89101",
+                "country": "US"
+            }
+        },
+        "_links": {
+            "self": {
+                "href": "\/v2\/animals\/53848054"
+            },
+            "type": {
+                "href": "\/v2\/types\/cat"
+            },
+            "organization": {
+                "href": "\/v2\/organizations\/nv26"
+            }
+        }
+    }, {
+        "id": 53848044,
+        "organization_id": "TX672",
+        "url": "https:\/\/www.petfinder.com\/cat\/sabrina-53848044\/tx\/texas-city\/galveston-county-animal-resource-center-tx672\/?referrer_id=24708ce2-e202-485f-83c9-e5f86adcea88",
+        "type": "Cat",
+        "species": "Cat",
+        "breeds": {
+            "primary": "Domestic Short Hair",
+            "secondary": null,
+            "mixed": false,
+            "unknown": false
+        },
+        "colors": {
+            "primary": null,
+            "secondary": null,
+            "tertiary": null
+        },
+        "age": "Adult",
+        "gender": "Female",
+        "size": "Small",
+        "coat": null,
+        "attributes": {
+            "spayed_neutered": false,
+            "house_trained": false,
+            "declawed": false,
+            "special_needs": false,
+            "shots_current": false
+        },
+        "environment": {
+            "children": null,
+            "dogs": null,
+            "cats": null
+        },
+        "tags": [],
+        "name": "SABRINA",
+        "description": "Combo tested Negative for FeLV and FIV.",
+        "organization_animal_id": "A028544",
+        "photos": [],
+        "primary_photo_cropped": null,
+        "videos": [],
+        "status": "adoptable",
+        "status_changed_at": "2021-12-09T21:34:55+0000",
+        "published_at": "2021-12-09T21:34:55+0000",
+        "distance": null,
+        "contact": {
+            "email": "arc@gchd.org",
+            "phone": "409-948-2485  ",
+            "address": {
+                "address1": "3412 Loop 197 North",
+                "address2": null,
+                "city": "Texas City",
+                "state": "TX",
+                "postcode": "77590",
+                "country": "US"
+            }
+        },
+        "_links": {
+            "self": {
+                "href": "\/v2\/animals\/53848044"
+            },
+            "type": {
+                "href": "\/v2\/types\/cat"
+            },
+            "organization": {
+                "href": "\/v2\/organizations\/tx672"
+            }
+        }
+    }, {
+        "id": 53848053,
+        "organization_id": "NV26",
+        "url": "https:\/\/www.petfinder.com\/cat\/bastet-53848053\/nv\/las-vegas\/the-animal-foundation-nv26\/?referrer_id=24708ce2-e202-485f-83c9-e5f86adcea88",
+        "type": "Cat",
+        "species": "Cat",
+        "breeds": {
+            "primary": "Domestic Short Hair",
+            "secondary": null,
+            "mixed": true,
+            "unknown": false
+        },
+        "colors": {
+            "primary": null,
+            "secondary": null,
+            "tertiary": null
+        },
+        "age": "Adult",
+        "gender": "Male",
+        "size": "Large",
+        "coat": null,
+        "attributes": {
+            "spayed_neutered": false,
+            "house_trained": false,
+            "declawed": false,
+            "special_needs": false,
+            "shots_current": false
+        },
+        "environment": {
+            "children": null,
+            "dogs": null,
+            "cats": null
+        },
+        "tags": [],
+        "name": "BASTET",
+        "description": null,
+        "organization_animal_id": "A1207127",
+        "photos": [],
+        "primary_photo_cropped": null,
+        "videos": [],
+        "status": "adoptable",
+        "status_changed_at": "2021-12-09T21:34:53+0000",
+        "published_at": "2021-12-09T21:34:53+0000",
+        "distance": null,
+        "contact": {
+            "email": "adoptions@animalfoundation.com",
+            "phone": "702-384-3333  ext.131 ",
+            "address": {
+                "address1": "655 N. Mojave",
+                "address2": null,
+                "city": "Las Vegas",
+                "state": "NV",
+                "postcode": "89101",
+                "country": "US"
+            }
+        },
+        "_links": {
+            "self": {
+                "href": "\/v2\/animals\/53848053"
+            },
+            "type": {
+                "href": "\/v2\/types\/cat"
+            },
+            "organization": {
+                "href": "\/v2\/organizations\/nv26"
+            }
+        }
+    }, {
+        "id": 53848048,
+        "organization_id": "TX487",
+        "url": "https:\/\/www.petfinder.com\/cat\/polly-53848048\/tx\/san-antonio\/animal-care-services-division-city-of-san-antonio-tx487\/?referrer_id=24708ce2-e202-485f-83c9-e5f86adcea88",
+        "type": "Cat",
+        "species": "Cat",
+        "breeds": {
+            "primary": "Domestic Short Hair",
+            "secondary": null,
+            "mixed": false,
+            "unknown": false
+        },
+        "colors": {
+            "primary": null,
+            "secondary": null,
+            "tertiary": null
+        },
+        "age": "Young",
+        "gender": "Female",
+        "size": "Medium",
+        "coat": null,
+        "attributes": {
+            "spayed_neutered": false,
+            "house_trained": false,
+            "declawed": false,
+            "special_needs": false,
+            "shots_current": false
+        },
+        "environment": {
+            "children": null,
+            "dogs": null,
+            "cats": null
+        },
+        "tags": [],
+        "name": "POLLY",
+        "description": null,
+        "organization_animal_id": "A624524",
+        "photos": [],
+        "primary_photo_cropped": null,
+        "videos": [],
+        "status": "adoptable",
+        "status_changed_at": "2021-12-09T21:34:52+0000",
+        "published_at": "2021-12-09T21:34:52+0000",
+        "distance": null,
+        "contact": {
+            "email": "ACSAdoptions@sanantonio.gov",
+            "phone": "(210) 207-6666",
+            "address": {
+                "address1": "4710 State Hwy 151",
+                "address2": null,
+                "city": "San Antonio",
+                "state": "TX",
+                "postcode": "78227",
+                "country": "US"
+            }
+        },
+        "_links": {
+            "self": {
+                "href": "\/v2\/animals\/53848048"
+            },
+            "type": {
+                "href": "\/v2\/types\/cat"
+            },
+            "organization": {
+                "href": "\/v2\/organizations\/tx487"
+            }
+        }
+    }, {
+        "id": 53848049,
+        "organization_id": "TX487",
+        "url": "https:\/\/www.petfinder.com\/cat\/mochi-53848049\/tx\/san-antonio\/animal-care-services-division-city-of-san-antonio-tx487\/?referrer_id=24708ce2-e202-485f-83c9-e5f86adcea88",
+        "type": "Cat",
+        "species": "Cat",
+        "breeds": {
+            "primary": "Domestic Short Hair",
+            "secondary": null,
+            "mixed": false,
+            "unknown": false
+        },
+        "colors": {
+            "primary": null,
+            "secondary": null,
+            "tertiary": null
+        },
+        "age": "Young",
+        "gender": "Male",
+        "size": "Medium",
+        "coat": null,
+        "attributes": {
+            "spayed_neutered": false,
+            "house_trained": false,
+            "declawed": false,
+            "special_needs": false,
+            "shots_current": false
+        },
+        "environment": {
+            "children": null,
+            "dogs": null,
+            "cats": null
+        },
+        "tags": [],
+        "name": "MOCHI",
+        "description": null,
+        "organization_animal_id": "A624529",
+        "photos": [],
+        "primary_photo_cropped": null,
+        "videos": [],
+        "status": "adoptable",
+        "status_changed_at": "2021-12-09T21:34:52+0000",
+        "published_at": "2021-12-09T21:34:52+0000",
+        "distance": null,
+        "contact": {
+            "email": "ACSAdoptions@sanantonio.gov",
+            "phone": "(210) 207-6666",
+            "address": {
+                "address1": "4710 State Hwy 151",
+                "address2": null,
+                "city": "San Antonio",
+                "state": "TX",
+                "postcode": "78227",
+                "country": "US"
+            }
+        },
+        "_links": {
+            "self": {
+                "href": "\/v2\/animals\/53848049"
+            },
+            "type": {
+                "href": "\/v2\/types\/cat"
+            },
+            "organization": {
+                "href": "\/v2\/organizations\/tx487"
+            }
+        }
+    }, {
+        "id": 53848031,
+        "organization_id": "NC1020",
+        "url": "https:\/\/www.petfinder.com\/cat\/smokey-53848031\/nc\/lincolnton\/lincoln-county-animal-services-nc1020\/?referrer_id=24708ce2-e202-485f-83c9-e5f86adcea88",
+        "type": "Cat",
+        "species": "Cat",
+        "breeds": {
+            "primary": "Domestic Short Hair",
+            "secondary": null,
+            "mixed": false,
+            "unknown": false
+        },
+        "colors": {
+            "primary": null,
+            "secondary": null,
+            "tertiary": null
+        },
+        "age": "Young",
+        "gender": "Male",
+        "size": "Medium",
+        "coat": null,
+        "attributes": {
+            "spayed_neutered": true,
+            "house_trained": false,
+            "declawed": false,
+            "special_needs": false,
+            "shots_current": false
+        },
+        "environment": {
+            "children": null,
+            "dogs": null,
+            "cats": null
+        },
+        "tags": [],
+        "name": "SMOKEY",
+        "description": null,
+        "organization_animal_id": "A011240",
+        "photos": [],
+        "primary_photo_cropped": null,
+        "videos": [],
+        "status": "adoptable",
+        "status_changed_at": "2021-12-09T21:34:51+0000",
+        "published_at": "2021-12-09T21:34:51+0000",
+        "distance": null,
+        "contact": {
+            "email": null,
+            "phone": "(704) 736-4125",
+            "address": {
+                "address1": null,
+                "address2": null,
+                "city": "Lincolnton",
+                "state": "NC",
+                "postcode": "28092",
+                "country": "US"
+            }
+        },
+        "_links": {
+            "self": {
+                "href": "\/v2\/animals\/53848031"
+            },
+            "type": {
+                "href": "\/v2\/types\/cat"
+            },
+            "organization": {
+                "href": "\/v2\/organizations\/nc1020"
+            }
+        }
+    }, {
+        "id": 53848029,
+        "organization_id": "FL279",
+        "url": "https:\/\/www.petfinder.com\/cat\/emilia-53848029\/fl\/west-palm-beach\/peggy-adams-animal-rescue-league-fl279\/?referrer_id=24708ce2-e202-485f-83c9-e5f86adcea88",
+        "type": "Cat",
+        "species": "Cat",
+        "breeds": {
+            "primary": "Domestic Short Hair",
+            "secondary": null,
+            "mixed": true,
+            "unknown": false
+        },
+        "colors": {
+            "primary": null,
+            "secondary": null,
+            "tertiary": null
+        },
+        "age": "Young",
+        "gender": "Female",
+        "size": "Medium",
+        "coat": null,
+        "attributes": {
+            "spayed_neutered": true,
+            "house_trained": false,
+            "declawed": false,
+            "special_needs": false,
+            "shots_current": false
+        },
+        "environment": {
+            "children": null,
+            "dogs": null,
+            "cats": null
+        },
+        "tags": [],
+        "name": "EMILIA",
+        "description": "I\u0026amp;#39;m Emilia, and I\u0026amp;#39;m a typical kitty who enjoys toys, naps and affection. I\u0026amp;#39;m totally fine with sharing my space...",
+        "organization_animal_id": "A0409902",
+        "photos": [],
+        "primary_photo_cropped": null,
+        "videos": [],
+        "status": "adoptable",
+        "status_changed_at": "2021-12-09T21:34:49+0000",
+        "published_at": "2021-12-09T21:34:49+0000",
+        "distance": null,
+        "contact": {
+            "email": "adoptions@peggyadams.org",
+            "phone": "561-686-3663",
+            "address": {
+                "address1": "3100 North Military Trail",
+                "address2": null,
+                "city": "West Palm Beach",
+                "state": "FL",
+                "postcode": "33409",
+                "country": "US"
+            }
+        },
+        "_links": {
+            "self": {
+                "href": "\/v2\/animals\/53848029"
+            },
+            "type": {
+                "href": "\/v2\/types\/cat"
+            },
+            "organization": {
+                "href": "\/v2\/organizations\/fl279"
+            }
+        }
+    }, {
+        "id": 53848024,
+        "organization_id": "CA63",
+        "url": "https:\/\/www.petfinder.com\/cat\/kiera-53848024\/ca\/santa-barbara\/santa-barbara-county-animal-services-santa-barbara-shelter-ca63\/?referrer_id=24708ce2-e202-485f-83c9-e5f86adcea88",
+        "type": "Cat",
+        "species": "Cat",
+        "breeds": {
+            "primary": "Siamese",
+            "secondary": "Domestic Short Hair",
+            "mixed": true,
+            "unknown": false
+        },
+        "colors": {
+            "primary": null,
+            "secondary": null,
+            "tertiary": null
+        },
+        "age": "Adult",
+        "gender": "Female",
+        "size": "Medium",
+        "coat": null,
+        "attributes": {
+            "spayed_neutered": true,
+            "house_trained": false,
+            "declawed": false,
+            "special_needs": false,
+            "shots_current": false
+        },
+        "environment": {
+            "children": null,
+            "dogs": null,
+            "cats": null
+        },
+        "tags": [],
+        "name": "KIERA",
+        "description": null,
+        "organization_animal_id": "A491257",
+        "photos": [],
+        "primary_photo_cropped": null,
+        "videos": [],
+        "status": "adoptable",
+        "status_changed_at": "2021-12-09T21:34:47+0000",
+        "published_at": "2021-12-09T21:34:47+0000",
+        "distance": null,
+        "contact": {
+            "email": null,
+            "phone": "(805) 681-5285",
+            "address": {
+                "address1": "5473 Overpass Road",
+                "address2": null,
+                "city": "Santa Barbara",
+                "state": "CA",
+                "postcode": "93111",
+                "country": "US"
+            }
+        },
+        "_links": {
+            "self": {
+                "href": "\/v2\/animals\/53848024"
+            },
+            "type": {
+                "href": "\/v2\/types\/cat"
+            },
+            "organization": {
+                "href": "\/v2\/organizations\/ca63"
+            }
+        }
+    }, {
+        "id": 53848025,
+        "organization_id": "FL286",
+        "url": "https:\/\/www.petfinder.com\/cat\/snowball-53848025\/fl\/fort-lauderdale\/humane-society-of-broward-county-fl286\/?referrer_id=24708ce2-e202-485f-83c9-e5f86adcea88",
+        "type": "Cat",
+        "species": "Cat",
+        "breeds": {
+            "primary": "Domestic Short Hair",
+            "secondary": null,
+            "mixed": false,
+            "unknown": false
+        },
+        "colors": {
+            "primary": null,
+            "secondary": null,
+            "tertiary": null
+        },
+        "age": "Baby",
+        "gender": "Male",
+        "size": "Medium",
+        "coat": null,
+        "attributes": {
+            "spayed_neutered": false,
+            "house_trained": false,
+            "declawed": false,
+            "special_needs": false,
+            "shots_current": false
+        },
+        "environment": {
+            "children": null,
+            "dogs": null,
+            "cats": null
+        },
+        "tags": [],
+        "name": "SNOWBALL",
+        "description": null,
+        "organization_animal_id": "A649892",
+        "photos": [],
+        "primary_photo_cropped": null,
+        "videos": [],
+        "status": "adoptable",
+        "status_changed_at": "2021-12-09T21:34:47+0000",
+        "published_at": "2021-12-09T21:34:47+0000",
+        "distance": null,
+        "contact": {
+            "email": "info@hsbroward.com",
+            "phone": "(954) 989-3977",
+            "address": {
+                "address1": "2070 Griffin Road",
+                "address2": null,
+                "city": "Fort Lauderdale",
+                "state": "FL",
+                "postcode": "33312",
+                "country": "US"
+            }
+        },
+        "_links": {
+            "self": {
+                "href": "\/v2\/animals\/53848025"
+            },
+            "type": {
+                "href": "\/v2\/types\/cat"
+            },
+            "organization": {
+                "href": "\/v2\/organizations\/fl286"
+            }
+        }
+    }, {
+        "id": 53848021,
+        "organization_id": "TX424",
+        "url": "https:\/\/www.petfinder.com\/cat\/griselda-53848021\/tx\/houston\/harris-county-pets-tx424\/?referrer_id=24708ce2-e202-485f-83c9-e5f86adcea88",
+        "type": "Cat",
+        "species": "Cat",
+        "breeds": {
+            "primary": "Domestic Short Hair",
+            "secondary": null,
+            "mixed": false,
+            "unknown": false
+        },
+        "colors": {
+            "primary": null,
+            "secondary": null,
+            "tertiary": null
+        },
+        "age": "Baby",
+        "gender": "Female",
+        "size": "Medium",
+        "coat": null,
+        "attributes": {
+            "spayed_neutered": false,
+            "house_trained": false,
+            "declawed": false,
+            "special_needs": false,
+            "shots_current": false
+        },
+        "environment": {
+            "children": null,
+            "dogs": null,
+            "cats": null
+        },
+        "tags": [],
+        "name": "GRISELDA",
+        "description": null,
+        "organization_animal_id": "A585303",
+        "photos": [],
+        "primary_photo_cropped": null,
+        "videos": [],
+        "status": "adoptable",
+        "status_changed_at": "2021-12-09T21:34:46+0000",
+        "published_at": "2021-12-09T21:34:46+0000",
+        "distance": null,
+        "contact": {
+            "email": "webmaster@countypets.com",
+            "phone": "(281) 999-3191",
+            "address": {
+                "address1": "612 Canino Rd",
+                "address2": null,
+                "city": "Houston",
+                "state": "TX",
+                "postcode": "77076",
+                "country": "US"
+            }
+        },
+        "_links": {
+            "self": {
+                "href": "\/v2\/animals\/53848021"
+            },
+            "type": {
+                "href": "\/v2\/types\/cat"
+            },
+            "organization": {
+                "href": "\/v2\/organizations\/tx424"
+            }
+        }
+    }],
+    "pagination": {
+        "count_per_page": 20,
+        "total_count": 119267,
+        "current_page": 1,
+        "total_pages": 5964,
+        "_links": {
+            "next": {
+                "href": "\/v2\/animals?type=Cat\u0026page=2"
+            }
+        }
+    }
+}
