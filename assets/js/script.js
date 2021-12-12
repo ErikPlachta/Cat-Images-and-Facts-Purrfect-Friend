@@ -43,7 +43,7 @@ const _get_TheCatAPI = async () => {
         const json = await res.json();
         console.log("Got results - in get data: ",json);
         //TODO::12/12/2021 #EPCB || Add if/else catch. If fails to fetch
-        _build_Content(json)
+        _build_Content(json);
     })();
     return null;
 }
@@ -103,7 +103,7 @@ function _build_Content(response){
             +'<img class="animal" alt="Random Cat Image" src="' + results.url + '">'
             +'<span id="catFact_'+results.id+'"></span>'
 
-        
+        console.log(div);
         animals_Section.appendChild(div);
         current_ID = "catFact_" +results.id;
     }
@@ -403,7 +403,8 @@ _load_Database();
 /* 2. Update Page Setings */
 
 /* 3. Load APIs & Build Page Dynamically */
-_get_TheCatAPI()
+_get_TheCatAPI();
+_get_TheCatAPI();
 
 
 //TODO:: 12/12/2021 #EP | Whats this?
