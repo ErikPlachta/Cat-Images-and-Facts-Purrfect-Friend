@@ -8,6 +8,8 @@
 // For local storage DB
 const database_Name = "purrfect-friend";
 
+//-- Used 
+var current_El = '';
 
 //-----------------------------
 //-- TIME RELATED VARIABLES
