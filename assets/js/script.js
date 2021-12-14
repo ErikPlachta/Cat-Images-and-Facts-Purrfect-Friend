@@ -81,11 +81,11 @@ const _set_CatFactsApi = async () => {
 function _build_Content(response){
     /* Takes Fetch Results from JSON and builds website content dynamically */
 
-    // get animals container to append child below
-    let animals_Section = document.getElementById("animals");
+    // get catCards container to append child below
+    let catCards_Section = document.getElementById("catCards");
     
     // clear it out if former content to add new
-    // animals_Section.innerHTML = "";
+    // catCards_Section.innerHTML = "";
 
     for (key in response){
         
@@ -107,7 +107,7 @@ function _build_Content(response){
             +'<span id="catFact_'+results.id+'"></span>'
 
         //-- Add div built to page
-        animals_Section.appendChild(div);
+        catCards_Section.appendChild(div);
         
         //-- Update global variable, current_ID, so cat-fact can connect to img
         current_ID = "catFact_" +results.id;

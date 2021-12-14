@@ -89,7 +89,7 @@ nav {
 }
 
 /* The container holding all cats */
-.animals{
+.catCards{
   display: flex;
   flex-flow: wrap;
   flex-direction: row;
