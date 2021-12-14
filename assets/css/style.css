@@ -84,13 +84,26 @@ h2 {
 
 header {
     /* Animation on loading */
-    -webkit-transition: background .2s ease-in-out;
-    transition: background .2s ease-in-out;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: around;
+}
+
+#appBranding {
+
+  flex: 1;
 }
 
 nav {
-
+  flex: 1;
 }
+
+
+/* END --> HEADER & NAV */
+/* -------------------------------------------------------------------------- */
+/* START --> CAT CARDS */
+
 
 /* The container holding all cats */
 .catCards{
@@ -153,12 +166,12 @@ nav {
   
 }
 
-/* HEADER & NAV --> END */
+/* END --> CAT CARDS */
 /* -------------------------------------------------------------------------- */
-/* FOOTER --> START */
+/* START --> FOOTER */
 
 
-/* FOOTER --> END */
+/* END --> FOOTER */
 /* -------------------------------------------------------------------------- */
 /* MEDIA SPECIFIC --> START  */
 
