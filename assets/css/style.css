@@ -7,16 +7,16 @@
 :root {
 
     /* COLORS  */
-    --color_Primary: #172a35;
-    --color_Accent: rgb(111, 255, 233);
+    --color_Primary: royalblue;
+    --color_Accent: black;
     
     /* COLORS - ALPHA */
     --color_shadow_025_black:  rgba(0,0,0,.25);
     --color_shadow_01_black:   rgba(0,0,0,.1);
   
     /* TITLE */
-    --title_Color: #fefdff
-    --title_Font: #0b132b;
+    --header_Color: var(--color_Primary);
+    --header_Font: white;
     
     /* BACKGROUND */
     --bg_Body: #F9F9F9; /* A very light shade of white gray */    
@@ -28,9 +28,10 @@
     /* BOX SHADOWS*/
     --boxShadow_Top: 0 -.1rem .5rem var(--color_shadow_025_black); /* offset-x | offset-y | blur-radius | color */
     --boxShadow_inset_Top:  inset 0px 11px 10px -10px var(--color_shadow_025_black); /* offset-x | offset-y | blur-radius | color */
-    --boxShadow_Inset_bottom:  inset 0px -11px 8px -10px var(--color_shadow_025_black); /* offset-x | offset-y | blur-radius | color */
+    --boxShadow_Inset_bottom:  inset 10px -11px 8px -10px var(--color_shadow_025_black); /* offset-x | offset-y | blur-radius | color */    
     --boxShadow_inset_Top_Right:  inset -10px 9px 7px -10px var(--color_shadow_025_black); /* offset-x | offset-y | blur-radius | color */
     --boxShadow_bottom_accent_Primary: 0 .01rem .4rem var(--color_Accent); /* offset-x | offset-y | blur-radius | color */
+    --boxShadow_bottom_accent_Primary: 0 .01rem .4rem var(--color_Primary); /* offset-x | offset-y | blur-radius | color */
     
     /* BOX SHADOWS - EFFECTS*/
     --boxShadow_top_hover_black_25a: 0 -.75rem 1rem var(--color_shadow_025_black); /* offset-x | offset-y | blur-radius | color */
@@ -77,6 +78,10 @@ h2 {
   font-weight: 400;
 }
 
+a {
+  text-decoration: none;
+}
+
 
 /* ALL ELEMENTS --> END */
 /* -------------------------------------------------------------------------- */
@@ -87,17 +92,46 @@ header {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: around;
+    justify-content: space-between;
+    background-color: var(--header_Color);
+    color: var(--header_Font);
+    padding: 0 1rem .5rem 1rem;
+    box-shadow: var(--boxShadow_bottom_accent_Primary);
+    border-radius: 0 0 .5rem .5rem;
 }
 
 #appBranding {
-
-  flex: 1;
+  /* Pushing nav buttons to right */
+  flex: 3;
+  
 }
 
 nav {
+  /* makes sure flexing in header */
   flex: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+  /* makes stick to far right */
+  justify-content: space-evenly;
 }
+
+/* navigation button */
+nav span {
+  /* TODO:: 12/13/2021 #EP || add stuff here */
+  font-size: 1.25rem;
+  bottom: 0;
+  /* pushes to bottom of container */
+  margin-top: auto;
+
+}
+
+#appBranding h1:hover,
+nav span:hover {
+  color: black;
+}
+
 
 
 /* END --> HEADER & NAV */
@@ -127,7 +161,7 @@ nav {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   /* padding: 1rem; */
   /* background: black; */
   
@@ -140,20 +174,16 @@ nav {
   /* makes sure image not stretched */
   align-self: center;
   
-  /*Forcing defaults to containers for now */
+
+  /* makes sure img is not too big or small */
   min-height: 250px;
-  /* width: 90%; */
-  overflow: hidden;
   max-height: 350px;
-  /*Space around image */
-  /* margin: 1rem; */
+  
+  /* makes sure img stays within container */
+  overflow: hidden;
 
-  /* fits to text */
+  /* fits to text and container in general is white space around edges of img */
   margin-top: auto;   
-
-
-  /* TODO: 12/13/2021 #EP || Delete once done */
-  /* border: 1px solid blue;  */
 }
 
 /* The Quote */
