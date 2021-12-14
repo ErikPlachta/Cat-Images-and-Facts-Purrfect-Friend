@@ -9,6 +9,7 @@
 const database_Name = "purrfect-friend";
 
 //-- Used when building container holding image and cat-fact. Unique to each IMG span
+    //TODO:: 12/13/2021 #EP || Pass this via function instead of global variable
 var current_ID = '';
 
 //-----------------------------
@@ -41,7 +42,9 @@ sleep(100);
 //-- START -> FETCH & BUILD CONTENT
 
 //-- Called by RUN to run API calls.
-function _build_Cat_Card(){
+function _build_catCard(){
+    //-- This API runs first and then calls cat fact
+        //TODO: 12/13/2021 #EP || Add async on this and run function call by itself
     _get_TheCatAPI();
 }
 
@@ -92,15 +95,15 @@ function _build_Content(response){
         var div = document.createElement("div");
         
         // set the div class as animal for css
-        div.setAttribute("class","animal_Img");
+        div.setAttribute("class","catCard");
 
         // Make animals ID the div element ID
         div.setAttribute("id", results.id);
 
         //-- Creating HTML content to dynamically build onto page
         div.innerHTML = 
-            '<h3 class="animal_Name">ID: '+results.id+'</h3>'
-            +'<img class="animal" alt="Random Cat Image" src="' + results.url + '">'
+            // '<h3 class="animal_Name">ID: '+results.id+'</h3>' //TODO: 12/13/2021 #EPCB || Add names
+            '<img class="catImage" alt="Random Cat Image" src="' + results.url + '">'
             +'<span id="catFact_'+results.id+'"></span>'
 
         //-- Add div built to page
@@ -425,7 +428,7 @@ function run_Program(){
     let database = get_Database()
 
     for(images = 0; images < database.settings.defaults.images; images++ ) {
-        _build_Cat_Card();
+        _build_catCard();
     }
     
     // _get_TheCatAPI();

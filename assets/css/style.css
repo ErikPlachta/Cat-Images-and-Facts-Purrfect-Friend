@@ -88,7 +88,7 @@ nav {
 
 }
 
-
+/* The container holding all cats */
 .animals{
   display: flex;
   flex-flow: wrap;
@@ -97,9 +97,13 @@ nav {
   border: 1px solid red;
 }
 
+/* The container holding image and quote */
+.catCard {
 
-/* The DIV holding each animal */
-.animal {
+}
+
+/* The container holding each animal */
+.catImage {
   /*Forcing defaults to containers for now */
   
   min-height: 250px;
