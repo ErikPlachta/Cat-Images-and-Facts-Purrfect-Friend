@@ -443,8 +443,17 @@ function add_Animations(){
         
     document.addEventListener('DOMContentLoaded', function() {
         setTimeout(function() {
-          document.getElementById('catCards').classList.add('slideDown');
-        }, 1000);
+            document.getElementById('nav').classList.add('slideDown');
+
+    
+
+        }, 500);
+    }, false);
+
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            document.getElementById('catCards').classList.add('slideRight');
+        }, 700);
     }, false);
 }
 
