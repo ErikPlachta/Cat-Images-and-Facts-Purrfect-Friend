@@ -443,7 +443,7 @@ function add_Animations(){
         
     document.addEventListener('DOMContentLoaded', function() {
         setTimeout(function() {
-          document.getElementById('catCards').classList.add('slideRight');
+          document.getElementById('catCards').classList.add('slideDown');
         }, 1000);
     }, false);
 }
