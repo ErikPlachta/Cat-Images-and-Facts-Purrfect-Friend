@@ -29,19 +29,31 @@ const time_12 = function() { return moment().format("hh:mm:ss:ms a")};
 //date & time for database logging down to the milisecond
 const datetime_12 = function() { return moment().format("YYYYMMDD hh:mm:ss:ms a")};
 
+//-- universal sleep function
+    //TODO:: 12/13/2021 #EP || Delete or use.
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+sleep(100);
 
 //-- END --> GLOBALS 
 /*----------------------------------------------------------------------------*/
 //-- START -> FETCH & BUILD CONTENT
 
+//-- Called by RUN to run API calls.
+function _build_Cat_Card(){
+    _get_TheCatAPI();
+}
+
 //-- Gets URL from TheCatAPI
 const _get_TheCatAPI = async () => {
 
+    //-- Fetch Request for images
+        //-- creating variable so async event can run. 
     const response = (async () => {
         
         const res = await fetch("https://api.thecatapi.com/v1/images/search");
         const json = await res.json();
-        console.log("Got results - in get data: ",json);
         //TODO::12/12/2021 #EPCB || Add if/else catch. If fails to fetch
         _build_Content(json);
     })();
@@ -55,22 +67,16 @@ const _set_CatFactsApi = async () => {
         
         const res = await fetch("https://catfact.ninja/fact");
         const json = await res.json();
-        console.log("Got results - in get data: ",json.fact);
         //TODO::12/12/2021 #EPCB || Add if/else catch. If fails to fetch
         $("#"+current_ID).text(json.fact);
     })();
-    // _build_Content(response);
+    
     
     return null;
 }
 
 function _build_Content(response){
     /* Takes Fetch Results from JSON and builds website content dynamically */
-
-    //TODO:: 12/12/2021 #EP || Delete when done testing
-    // console.log("//-- START --> function _build_Content(response)")
-    //TODO:: 12/12/2021 #EP || Delete when done testing
-    // console.log("//-- Response: " ,response)
 
     // get animals container to append child below
     let animals_Section = document.getElementById("animals");
@@ -79,13 +85,9 @@ function _build_Content(response){
     // animals_Section.innerHTML = "";
 
     for (key in response){
-        //TODO:: delete this
-        console.log("//-- Key: ",key);
-
+        
         var results = response[key];
-        //-- TODO:: Remove once done testing
-        console.log("result:", results.url);
-       
+        
         // Create DIV to hold animal
         var div = document.createElement("div");
         
@@ -97,21 +99,25 @@ function _build_Content(response){
 
         //-- Creating HTML content to dynamically build onto page
         div.innerHTML = 
-            //TODO:: 12/12/2021 #EPCB || Do we want a random name to generate?
             '<h3 class="animal_Name">ID: '+results.id+'</h3>'
             +'<img class="animal" alt="Random Cat Image" src="' + results.url + '">'
             +'<span id="catFact_'+results.id+'"></span>'
 
-        
-
+        //-- Add div built to page
         animals_Section.appendChild(div);
-        console.log(animals_Section)
+        
+        //-- Update global variable, current_ID, so cat-fact can connect to img
         current_ID = "catFact_" +results.id;
-        console.log($("#animals").html());
+        
     }
 
+    //-- Set the cat fact to the related div container in span placeholder
     _set_CatFactsApi()
+
+    //TODO:: 12/13/2021 #EP || Remove once done testing
     console.log("//-- END --> function _build_Content(response)")
+    
+    //-- nothing to return 
     return null;
 }
 
@@ -140,7 +146,7 @@ function _build_Content(response){
             - returns null
 */
 
-
+//-- Gets Database from local Storage
 function get_Database(){
     // Use to to get the current database in JSON format. Always returns dict.
 
@@ -171,7 +177,9 @@ function get_Database(){
     //-- Returns JSON dict
     return database_Current;
 };
+//-- END -> get_Database()
 
+//-- Builds database in Local storage
 function set_Database(entry) {
     /* Use to set database values in Local Storage. Verify, merge, append, and
         updates. 
@@ -326,9 +334,9 @@ function set_Database(entry) {
 };
 //-- END -> set_Database(entry)
 
+//-- Verifies Default Database exists
 function _load_Database() {
     //-- Default database to ensure required content always exists
-    
 
     let database_Default = {
         
@@ -364,6 +372,8 @@ function _load_Database() {
         settings: {
            defaults: {
                timeZone: null, // TODO:: 12/08/2021 #EP || Set a Default Time Zone based on browser
+               //-- The number of images to load at once
+               images: 6 
            },
            // If user defines these settings_Current, will over-ride defaults
            user: {
@@ -399,35 +409,44 @@ function _load_Database() {
 //-- RUNNING --> START
 
 
-/* 1. Load the database */
-_load_Database();
+function run_Program(){
 
-/* 2. Update Page Setings */
+    /* 1. Load the database */
+    _load_Database();
 
-/* 3. Load APIs & Build Page Dynamically */
-_get_TheCatAPI();
-_get_TheCatAPI();
+    /* 2. Update Page Setings */
+
+    // Navigation
+    // Footer
+    // ETC
 
 
-//TODO:: 12/12/2021 #EP | Whats this?
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-sleep(100);
+    /* 3. Build Page Dynamically */
+    let database = get_Database()
+
+    for(images = 0; images < database.settings.defaults.images; images++ ) {
+        _build_Cat_Card();
+    }
+    
+    // _get_TheCatAPI();
+}
+
+//-- Executes App
+run_Program();
 
 
 //-- RUNNING --> END
 /*----------------------------------------------------------------------------*/
 //-- START --> TESTING
 
-const _get_TestData = async () => {
+const _get_LocalTestData_JSON = async () => {
     //-- Used to pull local JSON file to page for testing
 
     const response = (async () => {
-        // let cityName = 'Charlotte';
+        
         const res = await fetch("./assets/json/test_Cats.json");
         const json = await res.json();
-        console.log("Got results - in get data: ",json);
+        console.log(json);
         _build_Content(json);
         //TODO::12/12/2021 #EPCB || Add if/else catch. If fails to fetch
     })();
@@ -435,9 +454,7 @@ const _get_TestData = async () => {
     
     return null;
 }
-// _get_TestData()
-
-
+// _get_LocalTestData_JSON();
 
 //-- END --> TESTING
 /*----------------------------------------------------------------------------*/
