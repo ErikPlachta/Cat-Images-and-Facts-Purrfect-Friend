@@ -430,11 +430,25 @@ function run_Program(){
         _build_catCard();
     }
     
-    // _get_TheCatAPI();
+    /*4. Add event listners*/
+    add_Animations();
 }
 
 //-- Executes App
 run_Program();
+
+
+//-- Animate cards appearing on load
+function add_Animations(){
+        
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+          document.getElementById('catCards').classList.add('slideRight');
+        }, 1000);
+    }, false);
+}
+
+
 
 
 //-- RUNNING --> END

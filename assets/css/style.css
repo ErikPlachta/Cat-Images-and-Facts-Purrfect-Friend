@@ -1,4 +1,8 @@
 /* -------------------------------------------------------------------------- */
+/* START --> IMPORTS  */
+
+/* END --> IMPORTS  */
+/* -------------------------------------------------------------------------- */
 /* :ROOT --> START */
 :root {
 
@@ -90,6 +94,7 @@ nav {
 
 /* The container holding all cats */
 .catCards{
+  visibility: hidden;
   display: flex;
   flex-flow: wrap;
   flex-direction: row;
@@ -100,8 +105,6 @@ nav {
 
 /* The container holding image and quote */
 .catCard {
-  /* max-width: 30%; */
-  /* margin: auto; */
   margin: 1rem;
   flex: 1 25%;
   /* border: 1rem solid red; */
