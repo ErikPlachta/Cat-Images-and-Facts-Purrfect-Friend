@@ -83,15 +83,14 @@ function _build_Content(response){
 
     // get catCards container to append child below
     let catCards_Section = document.getElementById("catCards");
-    
-    // clear it out if former content to add new
-    // catCards_Section.innerHTML = "";
 
+    //-- for each image received
     for (key in response){
         
+        //-- get the results in variable
         var results = response[key];
         
-        // Create DIV to hold animal
+        // Create DIV to hold animal card
         var div = document.createElement("div");
         
         // set the div class as animal for css
@@ -103,7 +102,7 @@ function _build_Content(response){
         //-- Creating HTML content to dynamically build onto page
         div.innerHTML = 
             // '<h3 class="animal_Name">ID: '+results.id+'</h3>' //TODO: 12/13/2021 #EPCB || Add names
-            '<img class="catImage" alt="Random Cat Image" src="' + results.url + '">'
+            '<img class="catImage" alt="Random Cat Image from TheCatAPI" src="' + results.url + '">'
             +'<span id="catFact_'+results.id+'"></span>'
 
         //-- Add div built to page

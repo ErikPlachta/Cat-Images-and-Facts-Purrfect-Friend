@@ -94,40 +94,51 @@ nav {
   flex-flow: wrap;
   flex-direction: row;
   /* TODO:: DELETE ME */
-  border: 1px solid red;
+  /* border: 1px solid red; */ /* TODO: 12/13/2021 #EP || Delete once done */
 }
 
 /* The container holding image and quote */
 .catCard {
-
+  /* max-width: 30%; */
+  /* margin: auto; */
+  margin: 1rem;
+  flex: 1 25%;
+  border: 1px solid red;
+  overflow: hidden;
+  
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+  /* padding: 1rem; */
 }
 
 /* The container holding each animal */
 .catImage {
-  /*Forcing defaults to containers for now */
+  flex: 1;
+  /* makes sure image not stretched */
+  align-self: center;
   
+  /*Forcing defaults to containers for now */
   min-height: 250px;
   max-height: 350px;
-
-
-  /*Space around containers */
-  margin: 1rem;
-
-  /*Making each SPAN within each animal in it's own row */
-  display: flex;
-  flex-direction: wrap;
-  flex-flow: column;
-  
-  /* Make everything space evenly within animal div */
-  justify-content: space-between;
+  /*Space around image */
+  /* margin: 1rem; */
+  margin-top: auto; 
   
   
-  /* TODO:: DELETE ME */
-  border: 1px solid blue; 
+  /* TODO: 12/13/2021 #EP || Delete once done */
+  /* border: 1px solid blue;  */
 }
 
-.animal span {
+/* The Quote */
+.catCard span {
+  /* flex: 1; */
   border: 1px solid rgba(0,0,0,.1);
+  width: 100%;
+  text-align: center;
+  margin-bottom: auto;
   
 }
 
