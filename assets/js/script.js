@@ -42,7 +42,7 @@ sleep(100);
 //-- START -> FETCH & BUILD CONTENT
 
 //-- Called by RUN to run API calls.
-function _build_catCard(){
+function _build_catCards(){
     //-- Get number of images to load from database, load accordingly.
     let database = get_Database()
 
@@ -129,8 +129,11 @@ function _build_Content(response){
 
 //-- Clears current cards, builds new ones
 function _rebuild_Content(){
+    // clear cat cards current
     document.getElementById('catCards').innerHTML = "";
-    run_Program();
+    
+    //-- Add new cat cards
+    _build_catCards();
 };
 
 
@@ -423,13 +426,16 @@ function _load_Database() {
 
 
 function _add_EventListners(){
-
-
-    $( "loadMore" ).click(function() {
+    //-- Builds event listners into buttons
+    
+    $( "#appName" ).click(function() {
         _rebuild_Content();
     });
 
-    
+    $( "#loadMore" ).click(function() {
+        _rebuild_Content();
+    });
+
 }
 
 
@@ -465,7 +471,7 @@ function run_Program(){
     _add_EventListners();
 
     /* 3. Build Page Dynamically */
-    _build_catCard();
+    _build_catCards();
     
     /*4. Add event listners*/
     _add_Animations();
