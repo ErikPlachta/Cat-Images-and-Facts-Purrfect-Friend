@@ -66,8 +66,8 @@
 
 body {
     box-sizing: border-box; /* prevent padding overflow */
-    /* background-color: var(--bg_Body); */
-    background-color: transparent;
+    /* background-color: rgba(0,0,0,.1); */
+    background: transparent;
     
 }
 
@@ -106,8 +106,16 @@ a {
 /* -------------------------------------------------------------------------- */
 /* HEADER & NAV --> START */
 
+.title {
+  margin: 3rem auto;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 1rem;
+  border-bottom: var(--border_shadow_1px_1a);
+}
+
 .container {
-  border-radius: 5.1rem;
+  border-radius: 5.2rem;
   background-color: black;
   box-shadow: var(--boxshadow_Container);
   width: 90%;
