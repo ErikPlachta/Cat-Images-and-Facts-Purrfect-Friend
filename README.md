@@ -1,4 +1,4 @@
-# Group Project Project  
+# Purrfect Friend   
 > ( *name change pending* )
 
 ## Summary 
