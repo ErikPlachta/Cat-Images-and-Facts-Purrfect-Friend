@@ -69,7 +69,11 @@ body {
 
 button {
   /* Default button styling */
-  box-shadow: var(--boxShadow_inset_Top_Right);
+  /* box-shadow: var(--boxShadow_inset_Top_Right); */
+  padding: 1rem;
+  border-radius: .5rem;
+  /* border: transparent; */
+
 }
 
 h1,h2,h3,h4,h5 {
@@ -85,6 +89,7 @@ h2 {
   font-weight: 400;
 }
 
+nav span a,
 a {
   text-decoration: none;
 }
@@ -111,12 +116,22 @@ header {
 
 #appBranding {
   /* Pushing nav buttons to right */
-  flex: 3;
-  
+  flex: 1;
 }
 
+
+#loadMore{
+  flex: 1 30%;
+  padding: 1rem;
+  background: transparent;
+  margin-top: auto;
+  background-color: white;
+  color: black;
+  /* font-size: 1.25rem; */
+}
+
+
 nav {
-  
   /* makes sure flexing in header */
   flex: 1;
   display: flex;
@@ -126,15 +141,16 @@ nav {
   /* makes stick to far right */
   justify-content: space-evenly;
 }
-
 /* navigation button */
+/* #loadMore, */
+nav span a,
 nav span {
   /* TODO:: 12/13/2021 #EP || add stuff here */
   font-size: 1.25rem;
   bottom: 0;
   /* pushes to bottom of container */
   margin-top: auto;
-
+  color: white;
 }
 
 #appBranding h1:hover,
