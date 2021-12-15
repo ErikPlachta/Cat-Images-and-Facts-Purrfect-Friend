@@ -42,10 +42,13 @@ sleep(100);
 //-- START -> FETCH & BUILD CONTENT
 
 //-- Called by RUN to run API calls.
-function _build_catCard(){
-    //-- This API runs first and then calls cat fact
-        //TODO: 12/13/2021 #EP || Add async on this and run function call by itself
-    _get_TheCatAPI();
+function _build_catCards(){
+    //-- Get number of images to load from database, load accordingly.
+    let database = get_Database()
+
+    for(images = 0; images < database.settings.defaults.images; images++ ) {
+        _get_TheCatAPI();
+    };
 }
 
 //-- Gets URL from TheCatAPI
@@ -124,8 +127,13 @@ function _build_Content(response){
     return null;
 }
 
-function _clear_CatCards(){
-    document.getElementById("catCards").innerHTML = "";
+//-- Clears current cards, builds new ones
+function _rebuild_Content(){
+    // clear cat cards current
+    document.getElementById('catCards').innerHTML = "";
+    
+    //-- Add new cat cards
+    _build_catCards();
 };
 
 
@@ -417,84 +425,55 @@ function _load_Database() {
 //-- RUNNING --> START
 
 
-function run_Program(){
+function _add_EventListners(){
+    //-- Builds event listners into buttons
+    
+    $( "#loadMore" ).click(function() {
+        _rebuild_Content();
+        console.log("click");
+    });
+}
 
+
+//-- Animate cards appearing on load
+function _add_Animations(){
+        
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            document.getElementById('nav').classList.add('slideDown');
+        }, 500);
+    }, false);
+
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            document.getElementById('catCards').classList.add('slideDown');
+        }, 500);
+    }, false);
+};
+
+
+
+function run_Program(){
+    
+    $( ".nav" ).load( "./assets/html/navigation.html");
+    
     /* 1. Load the database */
     _load_Database();
 
-    /* 2. Update Page Setings */
-
-    // Navigation
-    // Footer
-    // ETC
-
-
+    
     /* 3. Build Page Dynamically */
-    let database = get_Database()
-
-    for(images = 0; images < database.settings.defaults.images; images++ ) {
-        _build_catCard();
-    }
+    _build_catCards();
     
     /*4. Add event listners*/
-    add_Animations();
+    _add_Animations();
+    
+    /* 2. Update Page Setings */
+    _add_EventListners();
 }
 
 //-- Executes App
 run_Program();
 
 
-//-- Animate cards appearing on load
-function add_Animations(){
-        
-    document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(function() {
-            document.getElementById('nav').classList.add('slideDown');
-
-    
-
-        }, 500);
-    }, false);
-
-    document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(function() {
-            document.getElementById('catCards').classList.add('slideRight');
-            
-        }, 700);
-    }, false);
-};
-
-
-function _clear_CatCrds(){
-    document.getElementById('catCards').innerHTML = "";
-    run_Program();
-};
-
-
-
-
-
-
 //-- RUNNING --> END
-/*----------------------------------------------------------------------------*/
-//-- START --> TESTING
-
-const _get_LocalTestData_JSON = async () => {
-    //-- Used to pull local JSON file to page for testing
-
-    const response = (async () => {
-        
-        const res = await fetch("./assets/json/test_Cats.json");
-        const json = await res.json();
-        console.log(json);
-        _build_Content(json);
-        //TODO::12/12/2021 #EPCB || Add if/else catch. If fails to fetch
-    })();
-    // _build_Content(response);
-    
-    return null;
-}
-// _get_LocalTestData_JSON();
-
-//-- END --> TESTING
 /*----------------------------------------------------------------------------*/
