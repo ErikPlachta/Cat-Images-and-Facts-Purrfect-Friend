@@ -32,10 +32,8 @@
 
 <body>
     <!------------------------------------------------------------------------->
-    <!-- HEADER -> START -->
-    <header>
-        <nav></nav>
-    </header>
+    <!-- HEADER / NAV -> START -->
+      <header class='nav' id='nav'></header>
     <!-- HEADER -> END -->
     <!------------------------------------------------------------------------->
     
@@ -64,7 +62,14 @@
     <!-- CUSTOM JS -->
     <script src='./assets/js/script.js'></script>
     
-    <!-- TODO:: Determine scripts to use  -->
+    <!-- LOADING & FOOTER NAVIGATOIN -->
+    <script>
+      //-- Loads navigation into element
+      $( ".nav" ).load( "./assets/html/navigation.html");
+      console.log("loaded nav")
+      //-- Loads footer
+      //$( "#footer" ).load( "./assets/html/footer.html");
+    </script>
 
     <!-- SCRIPT -> END-->
 </body>
