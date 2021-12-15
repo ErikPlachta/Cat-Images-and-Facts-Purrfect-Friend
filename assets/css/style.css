@@ -130,6 +130,29 @@ header {
   box-shadow: var(--boxShadow_bottom_accent);
 }
 
+.mobile_Header{
+  padding-top: .5rem;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  border-radius: inherit;
+  /* background-color: black; */
+}
+
+.mobile_Data {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mobile_Data span {
+  background-color: var(--color_shadow_01_black);
+  box-shadow: var(--boxShadow_inset_Top_Right);
+  padding: .5rem;
+  border-radius: 1rem;
+  font-size: 1.25rem;
+}
 
 nav {
   /* Pushing nav buttons to right */

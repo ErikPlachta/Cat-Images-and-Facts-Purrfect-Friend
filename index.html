@@ -32,54 +32,55 @@
 
 <body>
 
-    <section class="container">
+  <!-- Container that holds the entire element -->
+  <section class="container">
 
+    <!------------------------------------------------------------------------->
+    <!-- START -> HEADER / NAV -->
     
-      <!------------------------------------------------------------------------->
-      <!-- HEADER / NAV -> START -->
-        <header class='nav' id='nav'></header>
-      <!-- HEADER -> END -->
-      <!------------------------------------------------------------------------->
-      
-      
-
-      <section class='catCards' id='catCards'></section>
-
-      <!------------------------------------------------------------------------->
-      <!-- FOOTER -> START-->
-      <footer>
-        <button id="loadMore" onclick="_rebuild_CatCrds()">More</button>
-      </footer>
-      <!-- FOOTER -> END-->
-      <!------------------------------------------------------------------------->
-    </section>
-    <!-- SCRIPT -> START-->
-
+    <header class='nav' id='nav'></header>
     
-    <!-- AJAX -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <!-- jQUERY -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <!-- Moment.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
-            integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer">
-    </script>
-    
-    <!-- CUSTOM JS -->
-    <script src='./assets/js/script.js'></script>
-    
-    <!-- LOADING & FOOTER NAVIGATOIN -->
-    <script>
-      //-- Loads navigation into element
-      $( ".nav" ).load( "./assets/html/navigation.html");
-      console.log("loaded nav")
-      //-- Loads footer
-      //$( "#footer" ).load( "./assets/html/footer.html");
-    </script>
+    <!-- END -> HEADER -->
+    <!------------------------------------------------------------------------->
+    <!-- START -> CATCARDS -->
 
-    <!-- SCRIPT -> END-->
+    <section class='catCards' id='catCards'></section>
+
+    <!------------------------------------------------------------------------->
+    <!-- FOOTER -> START-->
+    <footer>
+      <button id="loadMore">More +</button>
+    </footer>
+    <!-- FOOTER -> END-->
+    <!------------------------------------------------------------------------->
+  </section>
+  <!-- SCRIPT -> START-->
+
+  
+  <!-- AJAX -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!-- jQUERY -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <!-- Moment.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+          integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer">
+  </script>
+  
+  <!-- CUSTOM JS -->
+  <script src='./assets/js/script.js'></script>
+  
+  <!-- LOADING & FOOTER NAVIGATOIN -->
+  <script>
+    //-- Loads navigation into element
+    $( ".nav" ).load( "./assets/html/navigation.html");
+    console.log("loaded nav")
+    //-- Loads footer
+    //$( "#footer" ).load( "./assets/html/footer.html");
+  </script>
+  <!-- SCRIPT -> END-->
+
 </body>
 
 <!-- BODY -> END -->
