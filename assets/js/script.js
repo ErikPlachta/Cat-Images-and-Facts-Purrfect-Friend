@@ -72,6 +72,7 @@ const _set_CatFactsApi = async () => {
         const json = await res.json();
         //TODO::12/12/2021 #EPCB || Add if/else catch. If fails to fetch
         $("#"+current_ID).text(json.fact);
+        
     })();
     
     
@@ -122,6 +123,11 @@ function _build_Content(response){
     //-- nothing to return 
     return null;
 }
+
+function _clear_CatCards(){
+    document.getElementById("catCards").innerHTML = "";
+};
+
 
 //-- END -> BUILD CONTENT
 /*----------------------------------------------------------------------------*/
@@ -453,9 +459,18 @@ function add_Animations(){
     document.addEventListener('DOMContentLoaded', function() {
         setTimeout(function() {
             document.getElementById('catCards').classList.add('slideRight');
+            
         }, 700);
     }, false);
-}
+};
+
+
+function _clear_CatCrds(){
+    document.getElementById('catCards').innerHTML = "";
+    run_Program();
+};
+
+
 
 
 
