@@ -24,19 +24,26 @@
     --bg_Container_Alt:  #fefdff; /* A variation of white gray  */
     
     /* BUTTONS */
+
     
     /* BOX SHADOWS*/
     --boxShadow_Top: 0 -.1rem .5rem var(--color_shadow_025_black); /* offset-x | offset-y | blur-radius | color */
     --boxShadow_inset_Top:  inset 0px 11px 10px -10px var(--color_shadow_025_black); /* offset-x | offset-y | blur-radius | color */
     --boxShadow_Inset_bottom:  inset 10px -11px 8px -10px var(--color_shadow_025_black); /* offset-x | offset-y | blur-radius | color */    
     --boxShadow_inset_Top_Right:  inset -10px 9px 7px -10px var(--color_shadow_025_black); /* offset-x | offset-y | blur-radius | color */
-    --boxShadow_bottom_accent_Primary: 0 .01rem .4rem var(--color_Accent); /* offset-x | offset-y | blur-radius | color */
-    --boxShadow_bottom_accent_Primary: 0 .01rem .4rem var(--color_Primary); /* offset-x | offset-y | blur-radius | color */
+    --boxShadow_bottom_accent: 0 .01rem .4rem var(--color_Accent); /* offset-x | offset-y | blur-radius | color */
+    --boxShadow_bottom_Primary: 0 .01rem .4rem var(--color_Primary); /* offset-x | offset-y | blur-radius | color */
     
+
+    /* CATCARD - SHADOWS */
+    /*--boxShadow_top__black_CatCard: .2rem 0rem .2rem var(--color_shadow_025_black); /* offset-x | offset-y | blur-radius | color */
+    --boxShadow_top__black_CatCard: 0rem -.1rem .4rem var(--color_shadow_025_black); /* offset-x | offset-y | blur-radius | color */
+    --boxShadow_top_hover_black_CatCard: 0rem -.3rem .2rem var(--color_shadow_025_black); /* offset-x | offset-y | blur-radius | color */
+    --boxShadow_inset_black_CatCard: inset 0rem -.3rem .2rem var(--color_shadow_025_black); /* offset-x | offset-y | blur-radius | color */
+
     /* BOX SHADOWS - EFFECTS*/
     --boxShadow_top_hover_black_25a: 0 -.75rem 1rem var(--color_shadow_025_black); /* offset-x | offset-y | blur-radius | color */
-    --boxShadow_top_hover_black_1a:  0 -.1rem .5rem var(--color_shadow_01_black); /* offset-x | offset-y | blur-radius | color */
-    
+    --boxShadow_top_hover_black_1a:  0 -.1rem 10rem var(--color_shadow_01_black); /* offset-x | offset-y | blur-radius | color */
     
     /* BORDERS */
     --border_shadow_1px_25a: 1px solid var(--color_shadow_025_black);
@@ -133,6 +140,7 @@ nav span {
 #appBranding h1:hover,
 nav span:hover {
   color: black;
+  cursor: pointer;
 }
 
 
@@ -149,6 +157,7 @@ nav span:hover {
   flex-flow: wrap;
   flex-direction: row;
   
+  
   /* TODO:: DELETE ME */
   /* border: 1px solid red; */ /* TODO: 12/13/2021 #EP || Delete once done */
 }
@@ -160,15 +169,21 @@ nav span:hover {
   /* border: 1rem solid red; */
   border-radius: .5rem;
   overflow: hidden;
-  box-shadow: var(--boxShadow_Top);
+  box-shadow: var(--boxShadow_top__black_CatCard);
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  /* background:  */
   /* padding: 1rem; */
   /* background: black; */
   
   /* padding: 1rem; */
+}
+
+.catCard:hover {
+  box-shadow: var(--boxShadow_top_hover_black_CatCard);
+  cursor: pointer;
 }
 
 /* The container holding each animal */
