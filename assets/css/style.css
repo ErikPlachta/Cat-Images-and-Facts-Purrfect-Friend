@@ -243,6 +243,7 @@ nav span {
 
 #appName:hover,
 #GitHub:hover,
+#navMore:hover span,
 #loadMore:hover span {
   color: black;
   cursor: pointer;
@@ -365,28 +366,6 @@ footer {
 
 @media screen and (max-width: 700px) {
 
-
-  header nav,
-  header{
-    flex-direction: column;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-  }
-
-   #appTagline {
-    margin-bottom: 1rem; 
-  }
-
-  header nav span a,
-  header nav span {
-    
-    margin: 1rem 0;
-    /* border: 1px solid red; */
-    width: 100%;
-    padding: 0;
-  }
-
   section.catCards{
     flex-direction: column;
     /* margin: 0 5rem 0 5rem; */
@@ -399,6 +378,33 @@ footer {
     margin: 1rem 0;
     overflow: none;
   }
+
+}
+@media screen and (max-width: 635px) {
+
+  #hamburger,
+  #appName{
+    font-size: 3rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    
+    .container{
+      border-radius: 2rem;
+    }
+    
+    header {
+      border-radius: 2rem 2rem 0 0;
+    }
+
+    footer {
+      border-radius: 0 0 2rem 2rem;
+    }
+
+    #hamburger,
+    #appName{
+      font-size: 2.5rem;
+    }
 
 }
 
