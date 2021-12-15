@@ -24,19 +24,26 @@
     --bg_Container_Alt:  #fefdff; /* A variation of white gray  */
     
     /* BUTTONS */
+
     
     /* BOX SHADOWS*/
     --boxShadow_Top: 0 -.1rem .5rem var(--color_shadow_025_black); /* offset-x | offset-y | blur-radius | color */
     --boxShadow_inset_Top:  inset 0px 11px 10px -10px var(--color_shadow_025_black); /* offset-x | offset-y | blur-radius | color */
     --boxShadow_Inset_bottom:  inset 10px -11px 8px -10px var(--color_shadow_025_black); /* offset-x | offset-y | blur-radius | color */    
     --boxShadow_inset_Top_Right:  inset -10px 9px 7px -10px var(--color_shadow_025_black); /* offset-x | offset-y | blur-radius | color */
-    --boxShadow_bottom_accent_Primary: 0 .01rem .4rem var(--color_Accent); /* offset-x | offset-y | blur-radius | color */
-    --boxShadow_bottom_accent_Primary: 0 .01rem .4rem var(--color_Primary); /* offset-x | offset-y | blur-radius | color */
+    --boxShadow_bottom_accent: 0 .01rem .4rem var(--color_Accent); /* offset-x | offset-y | blur-radius | color */
+    --boxShadow_bottom_Primary: 0 .01rem .4rem var(--color_Primary); /* offset-x | offset-y | blur-radius | color */
     
+
+    /* CATCARD - SHADOWS */
+    /*--boxShadow_top__black_CatCard: .2rem 0rem .2rem var(--color_shadow_025_black); /* offset-x | offset-y | blur-radius | color */
+    --boxShadow_top__black_CatCard: 0rem -.1rem .4rem var(--color_shadow_025_black); /* offset-x | offset-y | blur-radius | color */
+    --boxShadow_top_hover_black_CatCard: 0rem -.3rem .2rem var(--color_shadow_025_black); /* offset-x | offset-y | blur-radius | color */
+    --boxShadow_inset_black_CatCard: inset 0rem -.3rem .2rem var(--color_shadow_025_black); /* offset-x | offset-y | blur-radius | color */
+
     /* BOX SHADOWS - EFFECTS*/
     --boxShadow_top_hover_black_25a: 0 -.75rem 1rem var(--color_shadow_025_black); /* offset-x | offset-y | blur-radius | color */
-    --boxShadow_top_hover_black_1a:  0 -.1rem .5rem var(--color_shadow_01_black); /* offset-x | offset-y | blur-radius | color */
-    
+    --boxShadow_top_hover_black_1a:  0 -.1rem 10rem var(--color_shadow_01_black); /* offset-x | offset-y | blur-radius | color */
     
     /* BORDERS */
     --border_shadow_1px_25a: 1px solid var(--color_shadow_025_black);
@@ -62,7 +69,12 @@ body {
 
 button {
   /* Default button styling */
-  box-shadow: var(--boxShadow_inset_Top_Right);
+  /* box-shadow: var(--boxShadow_inset_Top_Right); */
+  padding: 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  /* border: transparent; */
+
 }
 
 h1,h2,h3,h4,h5 {
@@ -72,12 +84,14 @@ h1,h2,h3,h4,h5 {
 
 h1 {
   font-weight: 400;
+  font-size: 2.5rem;
 }
 
 h2 {
   font-weight: 400;
 }
 
+nav span a,
 a {
   text-decoration: none;
 }
@@ -86,6 +100,7 @@ a {
 /* ALL ELEMENTS --> END */
 /* -------------------------------------------------------------------------- */
 /* HEADER & NAV --> START */
+
 
 header {
   /* Hidden so when animation happens it appears the first time */  
@@ -97,19 +112,41 @@ header {
   justify-content: space-between;
   background-color: var(--header_Color);
   color: var(--header_Font);
-  padding: 0 1rem .5rem 1rem;
-  box-shadow: var(--boxShadow_bottom_accent_Primary);
-  border-radius: 0 0 .5rem .5rem;
+  padding-bottom: 1rem;
+  border-bottom: var(--color_shadow_01_black);
+  border-radius: .5rem .5rem 0 0;
+}
+
+#appName{
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem 1rem 0 0 ;
+  background: transparent;
+  color: white;
+  font-size: 2rem;
 }
 
 #appBranding {
   /* Pushing nav buttons to right */
-  flex: 3;
+  /* flex: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; */
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 1rem 1rem;
+  background: transparent;
+  
+  bottom: 0;
+  /* position: absolute; */
+  /* align-items: center; */
+  
+  color: white;
+  font-size: 2rem;
   
 }
 
 nav {
-  
   /* makes sure flexing in header */
   flex: 1;
   display: flex;
@@ -119,20 +156,23 @@ nav {
   /* makes stick to far right */
   justify-content: space-evenly;
 }
-
 /* navigation button */
+/* #loadMore, */
+nav span a,
 nav span {
   /* TODO:: 12/13/2021 #EP || add stuff here */
-  font-size: 1.25rem;
+  font-size: 2rem;
   bottom: 0;
   /* pushes to bottom of container */
   margin-top: auto;
-
+  color: white;
 }
 
 #appBranding h1:hover,
+nav span:hover a,
 nav span:hover {
   color: black;
+  cursor: pointer;
 }
 
 
@@ -149,6 +189,7 @@ nav span:hover {
   flex-flow: wrap;
   flex-direction: row;
   
+  
   /* TODO:: DELETE ME */
   /* border: 1px solid red; */ /* TODO: 12/13/2021 #EP || Delete once done */
 }
@@ -160,15 +201,21 @@ nav span:hover {
   /* border: 1rem solid red; */
   border-radius: .5rem;
   overflow: hidden;
-  box-shadow: var(--boxShadow_Top);
+  box-shadow: var(--boxShadow_top__black_CatCard);
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  /* background:  */
   /* padding: 1rem; */
   /* background: black; */
   
   /* padding: 1rem; */
+}
+
+.catCard:hover {
+  box-shadow: var(--boxShadow_top_hover_black_CatCard);
+  cursor: pointer;
 }
 
 /* The container holding each animal */
@@ -203,13 +250,100 @@ nav span:hover {
 /* -------------------------------------------------------------------------- */
 /* START --> FOOTER */
 
+footer {
+  width: 100%;
+  background-color: var(--header_Color);
+  color: var(--header_Font);
+  /* padding: 1rem 0 0; */
+  box-shadow: var(--boxShadow_bottom_accent_Primary);
+  border-radius: 0 0 1rem 1rem;
+  overflow: none;
+}
+
+#loadMore{
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 1rem 1rem;
+  background: transparent;
+  color: white;
+  font-size: 2rem;
+  bottom: 0;
+}
+
 
 /* END --> FOOTER */
 /* -------------------------------------------------------------------------- */
 /* MEDIA SPECIFIC --> START  */
 
+@media screen and (max-width: 900px) {
+  /* header {
+    align-items: center;
+  } */
 
-@media screen and (max-width: 450px) {
+  #appBranding {
+    /* Pushing nav buttons to right */
+    /* width: 100%;
+    flex: 100%;
+    text-align: center;
+    margin-bottom: .5rem;
+    /* flex-direction: row; */
+    /* justify-content: center;
+    margin-top: auto; */ 
+  }
+
+ 
+  
+  
+  nav {
+
+  }
+
+}
+
+
+@media screen and (max-width: 850px) {
+  .catCard{
+    flex: 40%;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+
+
+  header nav,
+  header{
+    flex-direction: column;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+   #appTagline {
+    margin-bottom: 1rem; 
+  }
+
+  header nav span a,
+  header nav span {
+    
+    margin: 1rem 0;
+    /* border: 1px solid red; */
+    width: 100%;
+    padding: 0;
+  }
+
+  section.catCards{
+    flex-direction: column;
+    /* margin: 0 5rem 0 5rem; */
+    width: 90%;
+    margin: auto;
+    display: block;
+  }
+
+  .catCard {
+    margin: 1rem 0;
+    overflow: none;
+  }
 
 }
 
