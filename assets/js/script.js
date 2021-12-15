@@ -428,21 +428,10 @@ function _load_Database() {
 function _add_EventListners(){
     //-- Builds event listners into buttons
     
-    $( "#appName" ).click(function() {
-        _rebuild_Content();
-        console.log("click");
-    });
-
     $( "#loadMore" ).click(function() {
         _rebuild_Content();
         console.log("click");
     });
-
-    $( "#navMore" ).click(function() {
-        console.log('new window')
-        window.open('https://github.com/ErikPlachta/Purrfect-Friend', '_blank');
-    });
-
 }
 
 
@@ -464,11 +453,10 @@ function _add_Animations(){
 
 
 
-
 function run_Program(){
-
-
+    
     $( ".nav" ).load( "./assets/html/navigation.html");
+    
     /* 1. Load the database */
     _load_Database();
 

@@ -27,3 +27,16 @@
         GitHub
     </buton>
 </nav>
+
+<!-- Add event listners -->
+<script>
+    $( "#appName" ).click(function() {
+        _rebuild_Content();
+        console.log("click");
+    });
+
+    $( "#navMore" ).click(function() {
+        console.log('new window')
+        window.open('https://github.com/ErikPlachta/Purrfect-Friend', '_blank');
+    });
+</script>
