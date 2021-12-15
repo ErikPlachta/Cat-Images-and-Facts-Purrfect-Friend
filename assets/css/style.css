@@ -34,6 +34,8 @@
     --boxShadow_bottom_accent: 0 .01rem .4rem var(--color_Accent); /* offset-x | offset-y | blur-radius | color */
     --boxShadow_bottom_Primary: 0 .01rem .4rem var(--color_Primary); /* offset-x | offset-y | blur-radius | color */
     
+    /* Container */
+    --boxshadow_Container: 1.5rem 1rem 1rem var(--color_shadow_025_black);
 
     /* CATCARD - SHADOWS */
     /*--boxShadow_top__black_CatCard: .2rem 0rem .2rem var(--color_shadow_025_black); /* offset-x | offset-y | blur-radius | color */
@@ -66,6 +68,7 @@ body {
     box-sizing: border-box; /* prevent padding overflow */
     /* background-color: var(--bg_Body); */
     background-color: transparent;
+    
 }
 
 button {
@@ -104,13 +107,13 @@ a {
 /* HEADER & NAV --> START */
 
 .container {
-  
-  border-radius: 3rem;
+  border-radius: 5.1rem;
   background-color: black;
-  box-shadow: var(--boxShadow_top__black_CatCard);
-  width: 80%;
+  box-shadow: var(--boxshadow_Container);
+  width: 90%;
+  max-width: 825px;
   margin: 2rem auto;
-  /* border: 1px solid var(--color_shadow_01_black); */
+  border: 1.2px solid rgba(0,0,0,.1);
 
 }
 
@@ -124,7 +127,7 @@ header {
   justify-content: space-between;
   background-color: var(--header_Color);
   color: var(--header_Font);
-  border-radius: 3rem 3rem 0 0 ;
+  border-radius: 5rem 5rem 0 0 ;
   width: 100%;
   height: 100%;
   box-shadow: var(--boxShadow_bottom_accent);
@@ -163,26 +166,21 @@ nav {
   border-radius: 1rem 1rem 0 0 ;
   background: transparent;
   
-  bottom: 0;
-  /* position: absolute; */
-  /* align-items: center; */
-  
   color: white;
   font-size: 2rem;
   
 }
 
 #appName{
-  border-radius: 1rem 0rem 0 0 ;
-  font-size: 3rem;
+  /* border-radius: 1rem 0rem 0 0 ; */
+  font-size: 4rem;
+  font-weight: 400;
   width: 80%;
 }
 
 #navMore {
   margin: 0;
-  /* padding: 1rem; */
-  /* position: relative; */
-  border-radius: 0 1rem 0 0;
+  /* border-radius: 0 1rem 0 0; */
   width: 20%;
 }
 
@@ -214,8 +212,8 @@ nav {
 #appName,
 #navMore,
 #GitHub,
-#loadMore
-{
+#loadMore {
+  text-shadow: var(--boxShadow_top__black_CatCard);
   background: transparent;
   color: white;
   border: none;
@@ -245,7 +243,7 @@ nav span {
 
 #appName:hover,
 #GitHub:hover,
-#loadMore:hover {
+#loadMore:hover span {
   color: black;
   cursor: pointer;
   filter: brightness(110%);
@@ -260,7 +258,7 @@ nav span {
 
 /* The container holding all cats */
 .catCards{
-  width: 90%;
+  width: 95%;
   margin: 1rem auto;
   visibility: hidden;
   display: flex;
@@ -268,27 +266,23 @@ nav span {
   flex-direction: row;
   background-color: rgba(255,255,255,.9);
   border-radius: .5rem;
-  
-  
-  /* TODO:: DELETE ME */
-  /* border: 1px solid red; */ /* TODO: 12/13/2021 #EP || Delete once done */
 }
 
 /* The container holding image and quote */
 .catCard {
-  margin: 1rem;
-  flex: 1 25%;
+  margin: .5rem;
+  flex: 1 40%;
   /* border: 1rem solid red; */
   border-radius: .5rem;
   overflow: hidden;
   box-shadow: var(--boxShadow_top__black_CatCard);
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-evenly;
   /* background:  */
   /* padding: 1rem; */
-  background: black;
+  background: rgba(0,0,0,.9);
+  font-size: 1.25rem;
   
   /* padding: 1rem; */
 }
@@ -333,19 +327,21 @@ nav span {
 
 footer {
   width: 100%;
-  
+  height: 8rem;
   background-color: var(--header_Color);
-  color: var(--header_Font);
-  
-  box-shadow: var(--boxShadow_bottom_accent_Primary);
-  border-radius: 0 0 3rem 3rem;
-
+  border-radius: 0 0 5rem 5rem;
 }
 
 #loadMore{
   border-radius: 0 0 1rem 1rem;  
-  font-size: 2rem;
-  bottom: 0;
+  font-size: 3rem;
+}
+#loadMore span{
+  color: var(--header_Font);
+  background-color: var(--color_shadow_01_black);
+  box-shadow: var(--boxShadow_inset_Top_Right);
+  padding: .5rem;
+  border-radius: 1rem;
 }
 
 
@@ -353,8 +349,10 @@ footer {
 /* -------------------------------------------------------------------------- */
 /* MEDIA SPECIFIC --> START  */
 
-@media screen and (max-width: 900px) {
-  
+@media screen and (max-width: 1500px) {
+  .carCard {
+    flex: 50%;
+  }
 }
 
 
