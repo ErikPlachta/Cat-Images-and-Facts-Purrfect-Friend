@@ -112,7 +112,7 @@ header {
   justify-content: space-between;
   background-color: var(--header_Color);
   color: var(--header_Font);
-  padding: 0 1rem .5rem 1rem;
+  padding-bottom: 1rem;
   border-bottom: var(--color_shadow_01_black);
   border-radius: .5rem .5rem 0 0;
 }
