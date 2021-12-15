@@ -2,8 +2,8 @@
 	animation-name: slideDown;
 	-webkit-animation-name: slideDown;	
 
-	animation-duration: .5s;	
-	-webkit-animation-duration: .5s;
+	animation-duration: 1s;	
+	-webkit-animation-duration: .3s;
 
 	animation-timing-function: ease;	
 	-webkit-animation-timing-function: ease;	
@@ -28,21 +28,36 @@
 	0% {
 		transform: translateY(-100%);
 	}
-	50%{
-		transform: translateY(8%);
+	10%{
+		transform: translateY(-80%);
 	}
-	65%{
-		transform: translateY(-4%);
+	20%{
+		transform: translateY(-60%);
 	}
-	80%{
+	30%{
+		transform: translateY(-40%);
+	}
+	40%{
+		transform: translateY(-20%);
+	}			
+	50% {
+		transform: translateY(0%);
+	}
+	60%{
 		transform: translateY(4%);
 	}
-	95%{
-		transform: translateY(-2%);
+	70%{
+		transform: translateY(-0%);
+	}
+	80%{
+		transform: translateY(-4%);
+	}
+	90%{
+		transform: translateY(2%);
 	}			
 	100% {
 		transform: translateY(0%);
-	}		
+	}
 }
 
 @-webkit-keyframes slideDown {

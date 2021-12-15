@@ -445,17 +445,13 @@ function _add_Animations(){
     document.addEventListener('DOMContentLoaded', function() {
         setTimeout(function() {
             document.getElementById('nav').classList.add('slideDown');
-
-    
-
         }, 500);
     }, false);
 
     document.addEventListener('DOMContentLoaded', function() {
         setTimeout(function() {
-            document.getElementById('catCards').classList.add('slideRight');
-            
-        }, 700);
+            document.getElementById('catCards').classList.add('slideDown');
+        }, 500);
     }, false);
 };
 
