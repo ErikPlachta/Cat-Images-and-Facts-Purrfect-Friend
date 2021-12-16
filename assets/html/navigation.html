@@ -28,7 +28,7 @@
     </buton>
 </nav>
 
-<!-- Add event listners -->
+<!-- Add event listeners -->
 <script>
     $( "#appName" ).click(function() {
         _rebuild_Content();
@@ -36,7 +36,8 @@
     });
 
     $( "#navMore" ).click(function() {
-        console.log('new window')
-        window.open('https://github.com/ErikPlachta/Purrfect-Friend', '_blank');
+        document.getElementById('modal').classList.toggle('is-active');
+        // console.log('new window')
+        // window.open('https://github.com/ErikPlachta/Purrfect-Friend', '_blank');
     });
 </script>
