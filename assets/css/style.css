@@ -108,6 +108,17 @@ a {
 
 .modal {
   flex-direction: unset;
+  text-align: center;
+}
+
+.modal-card-foot {
+  align-items: center;
+}
+
+#makeMeHappy{
+  /* justify: center; */
+  font-size: 2rem;
+  width: 100%;
 }
 
 .title {
@@ -123,10 +134,11 @@ a {
   background-color: black;
   box-shadow: var(--boxshadow_Container);
   width: 90%;
-  max-width: 825px;
+  max-width: 750px;
+  /* max-height: 750px; */
   margin: 2rem auto;
   border: 1.2px solid rgba(0,0,0,.1);
-
+  /* display: none; */
 }
 
 header {
@@ -271,29 +283,29 @@ nav span {
 
 /* The container holding all cats */
 .catCards{
-  width: 95%;
-  margin: 1rem auto;
+  width: 100%;
+  margin: 0;
   visibility: hidden;
   display: flex;
   flex-flow: wrap;
   flex-direction: row;
-  background-color: rgba(255,255,255,.9);
+  background-color: rgba(255,255,255,.2);
   border-radius: .5rem;
+  
 }
 
 /* The container holding image and quote */
 .catCard {
   margin: .5rem;
-  flex: 1 40%;
-  /* border: 1rem solid red; */
+  flex: 40%;
+  /* border: 1px solid white; */
   border-radius: .5rem;
   overflow: hidden;
   box-shadow: var(--boxShadow_top__black_CatCard);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  /* background:  */
-  /* padding: 1rem; */
+  padding: .5rem;
   background: rgba(0,0,0,.9);
   font-size: 1.25rem;
   
@@ -331,7 +343,8 @@ nav span {
   text-align: center;
   margin-bottom: auto;
   color: white;
-  padding: 1rem 0;
+  padding: 1rem;
+  font-style: bold;
 }
 
 /* END --> CAT CARDS */
@@ -364,7 +377,7 @@ footer {
 
 @media screen and (max-width: 1500px) {
   .carCard {
-    flex: 50%;
+    flex: 40%;
   }
 }
 
@@ -377,6 +390,8 @@ footer {
 }
 
 @media screen and (max-width: 700px) {
+
+  
 
   section.catCards{
     flex-direction: column;
@@ -401,22 +416,21 @@ footer {
 
   @media screen and (max-width: 500px) {
     
-    .container{
-      border-radius: 2rem;
-    }
-    
-    header {
-      border-radius: 2rem 2rem 0 0;
-    }
-
-    footer {
-      border-radius: 0 0 2rem 2rem;
-    }
+  
 
     #hamburger,
     #appName{
       font-size: 2.5rem;
     }
+
+}
+
+@media screen and (max-width: 410px) {
+
+  #hamburger,
+  #appName{
+    font-size: 2rem;
+  }
 
 }
 
