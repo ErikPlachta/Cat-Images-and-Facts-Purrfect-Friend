@@ -1,15 +1,10 @@
-# Group Project Project  
-> ( *name change pending* )
+# Purrfect Friend  
+> The spark of cat-spiration you needed!
 
 ## Summary 
 
-> ( *TBD* )
-## Outline
-
-i. Link to Published App
-ii. Contributors
-iii. Mileones
-iv. Resources
+> The purpose of this app is to brighten your day with a wide assortment of random cat pictures and facts that give you a stretched out rush of excitement. 
+> Not to mention you learn many mind blowing facts about cats and you also discover new breeds of cats and what they look like.
 
 ## i. Link To Published App
 
@@ -31,13 +26,6 @@ iv. Resources
 
 - Primary contributions were
 - Link to About Me Page
-
-
-## iii. Mileones
-
-- [ ] Define App Goal
-- [ ] b
-- [ ] c
 
 ## iv. Resources
 
