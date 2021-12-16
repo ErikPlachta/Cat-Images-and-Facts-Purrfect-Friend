@@ -106,6 +106,10 @@ a {
 /* -------------------------------------------------------------------------- */
 /* HEADER & NAV --> START */
 
+.modal {
+  flex-direction: unset;
+}
+
 .title {
   margin: 3rem auto;
   width: 100%;

@@ -22,6 +22,8 @@
       rel="stylesheet"
     />
     <!-- Custom Stylesheets and Script -->
+    <!-- CSS Framework -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/animations.css" />
   </head>
@@ -32,14 +34,29 @@
 
 <body>
 
-  <section class="title">
-    <h1>The Purrfect Pet</h1>
-    <p>Built by Connie, Erik, & Elias</p>
-  </section>
+  <section> 
+    
+    <div id="modal" class="modal">
+        <div class="modal-background"></div> 
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title"> Purrfect-Friends </p>
+          </header>
+          <section class="modal-card-body">
+            <!-- Content ... -->
+            <h1> Are you sad/depressed? </h1>
+            <h2> Come see some cute cats so you can be happy again :D </h2>
+          </section>
+          <footer class="modal-card-foot">
+            <button id="makeMeHappy" class="button is-success"> Make me happy </button>
+          </footer>
+        </div>
+      </div>
+    </section>
 
   <!-- Container that holds the entire element -->
   <section class="container">
-
+    
     <!------------------------------------------------------------------------->
     <!-- START -> HEADER / NAV -->
     
@@ -54,7 +71,7 @@
     <!------------------------------------------------------------------------->
     <!-- FOOTER -> START-->
     <footer>
-      <button id="loadMore">
+      <button  id="loadMore">
         <span>
           More +
         </span>
@@ -76,11 +93,21 @@
           crossorigin="anonymous"
           referrerpolicy="no-referrer">
   </script>
+
   
   <!-- CUSTOM JS -->
   <!-- LOADING Navigation -->
   <script src='./assets/js/script.js'></script>
   
+  <script>
+
+    document.getElementById('makeMeHappy').onclick = function () {
+         document.getElementById('modal').classList.toggle('is-active');
+        console.log("test")
+    }
+    
+  </script>
+
   <!-- SCRIPT -> END-->
 
 </body>
