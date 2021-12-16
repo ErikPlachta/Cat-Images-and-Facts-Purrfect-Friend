@@ -14,14 +14,11 @@
 
 ### Given I want to see strictly cats pictures
 
--When I enter the site
-  Then I am presented with a navigation bar.
+- When I enter the site: Then I am presented with a navigation bar.
 
--When I click on "Load More"
-  Then I am presented with images and fun facts about cats.
+- When I click on "Load More": Then I am presented with images and fun facts about cats.
 
--When I select "Read Me"
-  Then I am taken to the repository to learn more about the project.
+- When I select "Read Me": Then I am taken to the repository to learn more about the project.
 
 ## ii. Contributors
 
