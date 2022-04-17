@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     
-    <title>Project 1 - Home</title>
+    <title>API Cat Facts and Images</title>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -39,15 +39,15 @@
         <div class="modal-background"></div> 
         <div class="modal-card">
           <header class="modal-card-head">
-            <p class="modal-card-title">Purrfect-Friends</p>
+            <p class="modal-card-title">About The App</p>
           </header>
           <section class="modal-card-body">
             <!-- Content ... -->
-            <h1> Are you sad/depressed? </h1>
-            <h2> Come see some cute cats so you can be happy again :D </h2>
+            <h1> Summary </h1>
+            <h2>The purpose of this app is to demonstrate a basic API call to request photos and text to populate content inline dynamically. <a href"https://github.com/ErikPlachta/Purrfect-Friend"> Click here to check out the repo</a>.</h2>
           </section>
           <footer class="modal-card-foot">
-            <button id="makeMeHappy" class="button is-success"> Make Me Happy!</button>
+           <button id="makeMeHappy" class="button is-success">Back To App</button>
           </footer>
         </div>
     </div>
@@ -102,7 +102,6 @@
 
     document.getElementById('makeMeHappy').onclick = function () {
          document.getElementById('modal').classList.toggle('is-active');
-        console.log("test")
     }
     
   </script>
